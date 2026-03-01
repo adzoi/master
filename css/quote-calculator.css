@@ -1,0 +1,182 @@
+/* Standalone quote / pricing calculator — uses main.css design tokens */
+.quote-calculator {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.quote-calculator__form {
+  background: #fff;
+  border: 1px solid var(--color-stone);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.quote-calculator__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem 2rem;
+  align-items: end;
+}
+
+.quote-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.quote-field.hidden {
+  display: none;
+}
+
+.quote-field__label {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-charcoal);
+  opacity: 0.9;
+}
+
+.quote-field__input,
+.quote-field__select {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-charcoal);
+  background: #fff;
+  border: 1px solid var(--color-stone);
+  border-radius: var(--radius-card);
+  padding: 0.6rem 0.9rem;
+  min-width: 0;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.quote-field__input:hover,
+.quote-field__input:focus,
+.quote-field__select:hover,
+.quote-field__select:focus {
+  border-color: var(--color-gold);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(184, 154, 90, 0.2);
+}
+
+/* ——— Location searchable autocomplete ——— */
+.quote-field--location {
+  min-width: 0;
+}
+
+.quote-location-combobox {
+  position: relative;
+  width: 100%;
+}
+
+.quote-location-combobox .quote-field__input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.quote-location-listbox {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin: 0;
+  margin-top: 2px;
+  padding: 0;
+  list-style: none;
+  max-height: 220px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid var(--color-stone);
+  border-radius: var(--radius-card);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.quote-location-listbox[aria-hidden="true"] {
+  display: none;
+}
+
+.quote-location-option {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--color-charcoal);
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.quote-location-option:hover,
+.quote-location-option.highlight {
+  background: var(--color-cream);
+  color: var(--color-green);
+}
+
+.quote-extras {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-stone);
+}
+
+.quote-extras__label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--color-charcoal);
+  cursor: pointer;
+}
+
+.quote-extras__label input {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--color-green);
+}
+
+.quote-result {
+  padding: 1.25rem;
+  background: var(--color-green);
+  color: var(--color-cream);
+  border-radius: var(--radius-card);
+  border-left: 4px solid var(--color-gold);
+  margin-bottom: 1.5rem;
+}
+
+.quote-result--error {
+  background: var(--color-charcoal);
+  border-left-color: var(--color-stone);
+}
+
+.quote-result__text {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.quote-result__actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.quote-result__actions .btn {
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .quote-calculator__form {
+    padding: 1.25rem;
+  }
+
+  .quote-calculator__grid {
+    grid-template-columns: 1fr;
+  }
+}

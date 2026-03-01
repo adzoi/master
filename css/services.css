@@ -1,0 +1,185 @@
+/* Services hub & service page shared */
+.services-hub-hero {
+  position: relative;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--nav-height) + 2rem) var(--container-pad) 2rem;
+  background: var(--color-green);
+  color: var(--color-cream);
+}
+
+.services-hub-hero__noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.services-hub-hero__breadcrumb {
+  position: absolute;
+  top: calc(var(--nav-height) + 1rem);
+  left: var(--container-pad);
+  font-size: 0.8125rem;
+  color: rgba(245, 240, 232, 0.7);
+}
+
+.services-hub-hero__breadcrumb:hover { color: var(--color-cream); }
+
+.services-hub-hero__content { text-align: center; }
+
+.services-hub-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.services-hub-hero__sub {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  color: var(--color-stone);
+}
+
+.services-hub-section {
+  padding: var(--section-pad) 0;
+}
+
+.services-hub-section--cream { background: var(--color-cream); }
+.services-hub-section--green { background: var(--color-green); color: var(--color-cream); }
+
+.services-hub-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.services-hub-section--cream .services-hub-section__title { color: var(--color-green); }
+.services-hub-section--green .services-hub-section__title { color: var(--color-green); }
+
+.services-hub-section__desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  max-width: 42rem;
+}
+
+.services-hub-section--cream .services-hub-section__desc { color: var(--color-green); opacity: 0.9; }
+.services-hub-section--green .services-hub-section__desc { color: var(--color-green); opacity: 0.9; }
+
+.services-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.services-hub-card {
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-card);
+  padding: 1.25rem 1.25rem 2.75rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient backgrounds — varied dark green tones per card */
+#paving-driveways .services-hub-card:nth-child(1) { background: linear-gradient(135deg, #1a4a2e 0%, #2d7a4a 50%, #1a3d28 100%); }
+#paving-driveways .services-hub-card:nth-child(2) { background: linear-gradient(145deg, #1a3d28 0%, #2d6a42 50%, #153520 100%); }
+#paving-driveways .services-hub-card:nth-child(3) { background: linear-gradient(125deg, #1e5232 0%, #2a7045 50%, #1a3d28 100%); }
+#paving-driveways .services-hub-card:nth-child(4) { background: linear-gradient(155deg, #163a24 0%, #2d7a4a 50%, #1a4a2e 100%); }
+#paving-driveways .services-hub-card:nth-child(5) { background: linear-gradient(135deg, #1a4a2e 0%, #256b3d 50%, #1a3d28 100%); }
+#paving-driveways .services-hub-card:nth-child(6) { background: linear-gradient(140deg, #1a3d28 0%, #2d6a42 50%, #153520 100%); }
+#paving-driveways .services-hub-card:nth-child(7) { background: linear-gradient(130deg, #1e5232 0%, #2d7a4a 50%, #1a4a2e 100%); }
+
+#garden-design .services-hub-card:nth-child(1) { background: linear-gradient(135deg, #1a3d28 0%, #2d7a4a 50%, #1a4a2e 100%); }
+#garden-design .services-hub-card:nth-child(2) { background: linear-gradient(150deg, #1a4a2e 0%, #256b3d 50%, #163a24 100%); }
+#garden-design .services-hub-card:nth-child(3) { background: linear-gradient(140deg, #153520 0%, #2d6a42 50%, #1a3d28 100%); }
+#garden-design .services-hub-card:nth-child(4) { background: linear-gradient(130deg, #1e5232 0%, #2a7045 50%, #1a4a2e 100%); }
+#garden-design .services-hub-card:nth-child(5) { background: linear-gradient(145deg, #1a4a2e 0%, #2d7a4a 50%, #1a3d28 100%); }
+#garden-design .services-hub-card:nth-child(6) { background: linear-gradient(135deg, #163a24 0%, #2d6a42 50%, #1e5232 100%); }
+
+#lawn-fencing .services-hub-card:nth-child(1) { background: linear-gradient(135deg, #1a4a2e 0%, #2d7a4a 50%, #1a3d28 100%); }
+#lawn-fencing .services-hub-card:nth-child(2) { background: linear-gradient(145deg, #1a3d28 0%, #256b3d 50%, #153520 100%); }
+#lawn-fencing .services-hub-card:nth-child(3) { background: linear-gradient(140deg, #1e5232 0%, #2d6a42 50%, #1a4a2e 100%); }
+
+/* Hover overlay for depth */
+.services-hub-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.2s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.services-hub-card:hover::after {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.services-hub-card__title,
+.services-hub-card__desc,
+.services-hub-card__arrow {
+  position: relative;
+  z-index: 1;
+}
+
+.services-hub-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  border-left: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.services-hub-card__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.services-hub-card__desc {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 1;
+  line-height: 1.4;
+}
+
+.services-hub-card__arrow {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1.25rem;
+  color: var(--color-cream);
+}
+
+.services-hub-cta {
+  padding: var(--section-pad) var(--container-pad);
+  background: var(--color-cream);
+  text-align: center;
+}
+
+.services-hub-cta__title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-green);
+  margin-bottom: 0.5rem;
+}
+
+.services-hub-cta__body {
+  margin-bottom: 1.25rem;
+  color: var(--color-green);
+  opacity: 0.9;
+}
+
+.services-hub-cta .btn--cream { background: var(--color-green); color: var(--color-cream); }
+
+@media (max-width: 768px) {
+  .services-hub-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Leaf 2 Leaf Landscapes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .error-page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; background: var(--color-green); color: var(--color-cream); position: relative; }
+    .error-page::before { content: ''; position: absolute; inset: 0; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); pointer-events: none; }
+    .error-page__code { font-family: var(--font-mono); font-size: clamp(4rem, 15vw, 8rem); font-weight: 500; color: var(--color-gold); margin-bottom: 0.5rem; }
+    .error-page__title { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.25rem); font-weight: 600; margin-bottom: 1rem; }
+    .error-page__body { font-family: var(--font-body); font-size: 1.125rem; color: var(--color-stone); margin-bottom: 1.5rem; max-width: 28rem; }
+    .error-page .btn { margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="home/index.html" class="nav__logo">
+        <img
+          src="images/logo.png"
+          alt="Leaf 2 Leaf Landscapes"
+          class="nav__logo-img"
+        >
+      </a>
+      <nav class="nav__links">
+        <a href="home/index.html">Home</a>
+        <div class="nav__link-wrap">
+          <a href="services/index.html">Services</a>
+          <div class="nav__dropdown">
+            <div class="nav__dropdown-inner">
+              <div class="nav__dropdown-col">
+                <h3>Paving & Driveways</h3>
+                <a href="services/paving-driveways/driveways.html">Driveways</a>
+                <a href="services/paving-driveways/resin-bound.html">Resin-Bound Surfaces</a>
+                <a href="services/paving-driveways/block-paving.html">Block Paving</a>
+                <a href="services/paving-driveways/flagging.html">Flagging</a>
+                <a href="services/paving-driveways/patios.html">Patios</a>
+                <a href="services/paving-driveways/kerbs-walling.html">Kerbs & Walling</a>
+                <a href="services/paving-driveways/gravel-driveways.html">Gravel Driveways</a>
+              </div>
+              <div class="nav__dropdown-col">
+                <h3>Garden Design & Planting</h3>
+                <a href="services/garden-design/landscaping-design.html">Landscaping & Design</a>
+                <a href="services/garden-design/flower-bed-design.html">Flower Bed Design</a>
+                <a href="services/garden-design/natural-stone.html">Natural Stone</a>
+                <a href="services/garden-design/planting-services.html">Planting Services</a>
+                <a href="services/garden-design/garden-features.html">Garden Features</a>
+                <a href="services/garden-design/porcelain-paving.html">Porcelain Paving</a>
+              </div>
+              <div class="nav__dropdown-col">
+                <h3>Lawn & Fencing</h3>
+                <a href="services/lawn-fencing/new-lawn-turf.html">New Lawn & Turf</a>
+                <a href="services/lawn-fencing/artificial-grass.html">Artificial Grass</a>
+                <a href="services/lawn-fencing/garden-fencing.html">Garden Fencing</a>
+              </div>
+              <a href="services/mobile-showroom/index.html" class="nav__dropdown-featured">Mobile Showroom — Ireland's First · Learn More →</a>
+            </div>
+          </div>
+        </div>
+        <a href="about/index.html">About</a>
+        <a href="reviews/index.html">Reviews</a>
+        <a href="gallery/index.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="nav__cta">Get a Free Quote</a>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav__overlay" id="nav-overlay">
+      <nav class="nav__overlay-links" id="nav-overlay-links">
+        <a href="home/index.html">Home</a>
+        <a href="services/index.html">Services</a>
+        <a href="about/index.html">About</a>
+        <a href="reviews/index.html">Reviews</a>
+        <a href="gallery/index.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="nav__overlay-cta">Get a Free Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="error-page">
+    <p class="error-page__code" aria-hidden="true">404</p>
+    <h1 class="error-page__title">Page Not Found</h1>
+    <p class="error-page__body">The page you're looking for doesn't exist — but your perfect garden does.</p>
+    <a href="home/index.html" class="btn btn--cream">Go Back Home</a>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <a href="home/index.html" class="footer__logo"><img src="images/logo.png" alt="Leaf 2 Leaf Landscapes" class="footer__logo-img"></a>
+        <p class="footer__tagline">Dublin's Outdoor Spaces, Reimagined.</p>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/leaf2leaflandscapes" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.instagram.com/leaf2leaflandscapes/" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="https://www.threads.com/@leaf2leaflandscapes" class="footer__social-link" aria-label="Threads" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.381 0-6.354-1.302-8.49-3.454C1.654 18.354.35 15.381.35 12c0-3.377 1.304-6.35 3.339-8.496C5.814 1.354 8.789.052 12.166.052c2.632 0 5.07.803 7.077 2.266L17.16 4.858a9.218 9.218 0 0 0-5.006-1.448c-2.49 0-4.655.947-6.337 2.496C4.152 7.483 3.206 9.646 3.206 12s.946 4.517 2.518 6.152c1.682 1.549 3.847 2.496 6.337 2.496a9.22 9.22 0 0 0 5.006-1.448l2.083 2.54C17.256 23.197 14.818 24 12.186 24zM12.192 6.235c-1.38 0-2.563.526-3.47 1.448-.906.922-1.402 2.14-1.402 3.317s.496 2.395 1.402 3.317c.907.922 2.09 1.448 3.47 1.448 1.38 0 2.563-.526 3.47-1.448.906-.922 1.402-2.14 1.402-3.317s-.496-2.395-1.402-3.317c-.907-.922-2.09-1.448-3.47-1.448z"/></svg></a>
+          <a href="https://www.youtube.com/@leaf2leaflandscapes585" class="footer__social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://www.google.com/maps?ll=53.276982,-6.205679&amp;z=14&amp;t=m&amp;hl=en&amp;gl=IE&amp;mapclient=embed&amp;cid=7389538408450652316" class="footer__social-link" aria-label="Google Maps" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__col-title">Paving & Driveways</h3>
+        <div class="footer__col-links">
+          <a href="services/paving-driveways/driveways.html">Driveways</a>
+          <a href="services/paving-driveways/resin-bound.html">Resin-Bound Surfaces</a>
+          <a href="services/paving-driveways/block-paving.html">Block Paving</a>
+          <a href="services/paving-driveways/flagging.html">Flagging</a>
+          <a href="services/paving-driveways/patios.html">Patios</a>
+          <a href="services/paving-driveways/kerbs-walling.html">Kerbs & Walling</a>
+          <a href="services/paving-driveways/gravel-driveways.html">Gravel Driveways</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__col-title">Garden & Lawn</h3>
+        <div class="footer__col-links">
+          <a href="services/garden-design/landscaping-design.html">Landscaping & Design</a>
+          <a href="services/garden-design/flower-bed-design.html">Flower Bed Design</a>
+          <a href="services/garden-design/natural-stone.html">Natural Stone</a>
+          <a href="services/garden-design/planting-services.html">Planting Services</a>
+          <a href="services/garden-design/garden-features.html">Garden Features</a>
+          <a href="services/garden-design/porcelain-paving.html">Porcelain Paving</a>
+          <a href="services/lawn-fencing/new-lawn-turf.html">New Lawn & Turf</a>
+          <a href="services/lawn-fencing/artificial-grass.html">Artificial Grass</a>
+          <a href="services/lawn-fencing/garden-fencing.html">Garden Fencing</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__col-title">Company</h3>
+        <div class="footer__col-links">
+          <a href="about/index.html">About Us</a>
+          <a href="gallery/index.html">Our Work</a>
+          <a href="reviews/index.html">Reviews</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="contact.html">Get a Free Quote</a>
+        </div>
+        <div class="footer__contact">
+          <p>📞 (01) 901 2633</p>
+          <p>📞 (085) 118 8081</p>
+          <p>✉️ info@leaf2leaflandscapes.ie</p>
+          <p>📍 Unit 4/5, Burton Hall Park<br>Sandyford, Dublin 18</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>© 2026 Leaf 2 Leaf Landscapes · All rights reserved · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+      <span class="footer__bottom-serving">Serving all of County Dublin</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/chat-widget.js"></script>
+</body>
+</html>
