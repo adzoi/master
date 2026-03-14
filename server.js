@@ -135,12 +135,13 @@ app.post('/api/book', function (req, res) {
 
 console.log('5. routes defined');
 
-var port = parseInt(process.env.PORT, 10) || 3000;
+const PORT = parseInt(process.env.PORT, 10) || 3000;
 
 console.log('6. about to listen');
 
 function tryListen(p) {
-  var server = app.listen(p, function () {
+  var server = app.listen(p, '0.0.0.0', function () {
+    console.log('Server running on port ' + p);
     console.log('L2L chat proxy running at http://localhost:' + p);
     console.log('Open http://localhost:' + p + '/home/index.html (or any page) and use the chat.');
   });
@@ -153,4 +154,4 @@ function tryListen(p) {
     }
   });
 }
-tryListen(port);
+tryListen(PORT);
