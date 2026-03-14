@@ -138,10 +138,6 @@ app.post('/api/book', function (req, res) {
     });
 });
 
-app.get('*', function (req, res) {
-  res.status(404).send('Cannot find: ' + req.url);
-});
-
 console.log('Routes registered:', app._router.stack.filter(function (r) { return r.route; }).map(function (r) { return r.route.path; }));
 console.log('5. routes defined');
 
