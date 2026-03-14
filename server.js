@@ -147,6 +147,13 @@ console.log('5. routes defined');
 
 const PORT = parseInt(process.env.PORT, 10) || 3000;
 
+console.log('Registered routes:');
+app._router.stack.forEach(function (r) {
+  if (r.route && r.route.path) {
+    console.log(r.route.methods, r.route.path);
+  }
+});
+
 console.log('6. about to listen');
 
 function tryListen(p) {
