@@ -7,6 +7,7 @@ console.log('server.js starting...');
  * Then open http://localhost:3000 (e.g. home/index.html)
  */
 require('dotenv').config();
+var path = require('path');
 var express = require('express');
 var app = express();
 console.log('1. requires loaded');
@@ -19,7 +20,7 @@ console.log('2. env loaded');
 console.log('3. app created');
 
 app.use(express.json());
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname)));
 console.log('4. middleware set');
 
 app.get('/', function (req, res) {
@@ -135,6 +136,10 @@ app.post('/api/book', function (req, res) {
       console.error('/api/book proxy error:', err.message);
       res.status(500).json({ status: 'error', message: err.message });
     });
+});
+
+app.get('*', function (req, res) {
+  res.status(404).send('Cannot find: ' + req.url);
 });
 
 console.log('5. routes defined');
