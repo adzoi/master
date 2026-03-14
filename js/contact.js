@@ -33,15 +33,25 @@
     dateInput.setAttribute('min', today.toISOString().split('T')[0]);
   }
 
-  // ----- Form: submit to n8n webhook, show success or alert -----
+  // ----- Form: submit to n8n webhook, redirect on success, show slots or error -----
   const form = document.getElementById('quote-form');
   const successEl = document.getElementById('form-success');
+  const slotsBox = document.getElementById('form-slots');
+  const errorBox = document.getElementById('form-error');
   const formCol = form && form.closest('.contact-page__right');
-  const WEBHOOK_URL = 'https://adzoo.app.n8n.cloud/webhook/appointments';
+  const WEBHOOK_URL = '/api/book';
   const SUBMIT_BTN_TEXT = 'Send My Enquiry →';
-  const ERROR_ALERT = 'Something went wrong. Please try again or call us directly on 01 234 5678.';
 
-  if (form && successEl && formCol) {
+  function dateToYYYYMMDD(val) {
+    if (!val || typeof val !== 'string') return val || '';
+    var trimmed = val.trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) return trimmed;
+    var m = trimmed.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
+    if (m) return m[3] + '-' + m[2].padStart(2, '0') + '-' + m[1].padStart(2, '0');
+    return trimmed;
+  }
+
+  if (form && formCol) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) return;
@@ -54,14 +64,19 @@
         return el ? (el.value || '').trim() : '';
       }
 
+      var preferredDate = getValue('Preferred Date');
       var payload = {
         'Full name': getValue('Full Name'),
         'Gmail': getValue('Gmail'),
         'Phone': getValue('Phone'),
-        'Preferred Date': getValue('Preferred Date'),
+        'Preferred Date': dateToYYYYMMDD(preferredDate),
         'Preferred Time': getValue('Preferred Time'),
-        'Additional Comment': getValue('Additional Comment')
+        'Additional Comment': getValue('Additional Comment') || ''
       };
+
+      if (slotsBox) slotsBox.hidden = true;
+      if (errorBox) errorBox.hidden = true;
+      if (successEl) successEl.hidden = true;
 
       if (submitBtn) {
         submitBtn.disabled = true;
@@ -81,20 +96,40 @@
           });
         })
         .then(function (result) {
-          // Handle both { status: 'success' } and { data: { status: 'success' } }
-          var body = (result.data && result.data.data) ? result.data.data : result.data;
-          if (result.ok && body && body.status === 'success') {
-            successEl.textContent = body.message || 'Your appointment is confirmed! Check your email for details.';
-            successEl.hidden = false;
-            formCol.classList.add('form-submitted');
-            successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            form.reset();
-          } else {
-            alert(ERROR_ALERT);
+          var raw = result.data;
+          var body = (raw && raw.status) ? raw
+            : (raw && raw.data && raw.data.status) ? raw.data
+            : (raw && raw.body && raw.body.status) ? raw.body
+            : raw;
+          if (body && body.status === 'success') {
+            var name = (body.name || payload['Full name'] || '').trim() || 'there';
+            var time = (body.bookedTime || payload['Preferred Time'] || 'your requested time').trim();
+            window.location.href = '/booking-confirmed.html?name=' + encodeURIComponent(name) + '&time=' + encodeURIComponent(time);
+            return;
+          }
+          if (body && body.status === 'time_unavailable') {
+            var slots = body.availableSlots;
+            var slotsStr = Array.isArray(slots) ? slots.join(', ') : (typeof slots === 'string' ? slots : String(slots || ''));
+            if (slotsBox) {
+              var listEl = slotsBox.querySelector('.slots-list');
+              if (listEl) listEl.textContent = slotsStr || 'None available';
+              slotsBox.hidden = false;
+              slotsBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+            return;
+          }
+          if (errorBox) {
+            errorBox.textContent = 'Something went wrong. Please call us on (01) 901 2633.';
+            errorBox.hidden = false;
+            errorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           }
         })
         .catch(function () {
-          alert(ERROR_ALERT);
+          if (errorBox) {
+            errorBox.textContent = 'Something went wrong. Please call us on (01) 901 2633.';
+            errorBox.hidden = false;
+            errorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
         })
         .finally(function () {
           if (submitBtn) {
@@ -106,7 +141,7 @@
   }
 
   // ----- Scroll reveal for contact page left column -----
-  const revealEls = document.querySelectorAll('.page-contact .contact-page__block, .page-contact .contact-page__social-wrap, .page-contact .contact-page__trust');
+  const revealEls = document.querySelectorAll('.page-contact .contact-page__block, .page-contact .contact__social, .page-contact .contact-page__trust');
   if (revealEls.length && 'IntersectionObserver' in window) {
     var observer = new IntersectionObserver(
       function (entries) {

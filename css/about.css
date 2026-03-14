@@ -114,6 +114,18 @@
   border-radius: 0;
 }
 
+/* Remove white circle/background around about-page logo */
+.about-founder-logo {
+  background: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.about-founder-logo__img {
+  background: none !important;
+  border-radius: 0 !important;
+}
+
 .about-hero__placeholder {
   width: 100%;
   max-width: 380px;
@@ -176,6 +188,14 @@
   border-radius: var(--radius-card);
   background: linear-gradient(145deg, var(--color-stone) 0%, var(--color-green) 60%, var(--color-charcoal) 100%);
   border: 3px solid var(--color-green);
+}
+
+.origin-section__img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 /* ---------- TIMELINE ---------- */
@@ -311,8 +331,8 @@
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
 }
 
 .team-card {
@@ -621,7 +641,7 @@
   }
 
   .team-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .values-grid {
@@ -641,3 +661,4 @@
     width: 100%;
   }
 }
+

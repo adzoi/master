@@ -1,3 +1,6 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 /* Services hub & service page shared */
 .services-hub-hero {
   position: relative;
@@ -31,14 +34,14 @@
 .services-hub-hero__content { text-align: center; }
 
 .services-hub-hero__title {
-  font-family: var(--font-display);
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .services-hub-hero__sub {
-  font-family: var(--font-body);
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.0625rem;
   color: var(--color-stone);
 }
@@ -51,14 +54,14 @@
 .services-hub-section--green { background: var(--color-green); color: var(--color-cream); }
 
 .services-hub-section__title {
-  font-family: var(--font-display);
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
   margin-bottom: 0.75rem;
 }
 
 .services-hub-section--cream .services-hub-section__title { color: var(--color-green); }
-.services-hub-section--green .services-hub-section__title { color: var(--color-green); }
+.services-hub-section--green .services-hub-section__title { color: #fff; }
 
 .services-hub-section__desc {
   font-size: 1rem;
@@ -68,7 +71,7 @@
 }
 
 .services-hub-section--cream .services-hub-section__desc { color: var(--color-green); opacity: 0.9; }
-.services-hub-section--green .services-hub-section__desc { color: var(--color-green); opacity: 0.9; }
+.services-hub-section--green .services-hub-section__desc { color: rgba(255, 255, 255, 0.85); }
 
 .services-hub-grid {
   display: grid;
@@ -106,20 +109,20 @@
 #lawn-fencing .services-hub-card:nth-child(2) { background: linear-gradient(145deg, #1a3d28 0%, #256b3d 50%, #153520 100%); }
 #lawn-fencing .services-hub-card:nth-child(3) { background: linear-gradient(140deg, #1e5232 0%, #2d6a42 50%, #1a4a2e 100%); }
 
-/* Hover overlay for depth */
+/* Dark overlay so text stays readable over background images */
 .services-hub-card::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.45);
   transition: background 0.2s ease;
   pointer-events: none;
   z-index: 0;
 }
 
 .services-hub-card:hover::after {
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.55);
 }
 
 .services-hub-card__title,
@@ -136,7 +139,7 @@
 }
 
 .services-hub-card__title {
-  font-family: var(--font-display);
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: #ffffff;
@@ -165,7 +168,7 @@
 }
 
 .services-hub-cta__title {
-  font-family: var(--font-display);
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.75rem;
   font-weight: 600;
   color: var(--color-green);

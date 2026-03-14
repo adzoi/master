@@ -1,3 +1,6 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 /* ============================================
    Leaf 2 Leaf Landscapes — Reviews Page
    Uses design tokens from main.css only.
@@ -10,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: calc(var(--nav-height) + 2rem) var(--container-pad) 2rem;
+  padding: calc(var(--nav-height) + clamp(1.5rem, 4vw, 2.5rem)) clamp(16px, 4vw, 40px) clamp(1.5rem, 4vw, 2.5rem);
   background: var(--color-green);
   color: var(--color-cream);
 }
@@ -133,6 +136,9 @@
 }
 
 .rating-bar__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   opacity: 0;
   transform: translateY(12px);
@@ -154,6 +160,7 @@
 }
 
 .rating-bar__label {
+  display: block;
   font-family: var(--font-body);
   font-size: 0.8125rem;
   color: var(--color-charcoal);
@@ -246,6 +253,19 @@
   color: rgba(245, 240, 232, 0.75);
 }
 
+.featured-review__meta--google {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+}
+
+.featured-review__google-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
 .featured-review__verified {
   position: absolute;
   bottom: 1rem;
@@ -308,6 +328,72 @@
   border-color: var(--color-green);
 }
 
+/* ---------- REVIEWS SUMMARY ---------- */
+.reviews-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.reviews-summary__rating {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-green);
+  letter-spacing: 0.02em;
+}
+
+.reviews-summary__rating .reviews-summary__stars {
+  color: var(--color-gold);
+}
+
+.reviews-summary__meta {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--color-charcoal);
+  opacity: 0.9;
+}
+
+.reviews-summary__link {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-green);
+  transition: color var(--transition-fast);
+}
+
+.reviews-summary__link:hover {
+  color: var(--color-gold);
+}
+
+/* ---------- REVIEWS ERROR ---------- */
+.reviews-error {
+  text-align: center;
+  padding: 2rem var(--container-pad);
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: var(--radius-card);
+  margin-bottom: 1.5rem;
+}
+
+.reviews-error p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-charcoal);
+  margin: 0 0 0.5rem;
+}
+
+.reviews-error a {
+  color: var(--color-green);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.reviews-error a:hover {
+  color: var(--color-gold);
+}
+
 /* ---------- REVIEWS GRID ---------- */
 .reviews-section {
   padding: var(--section-pad) 0;
@@ -321,10 +407,12 @@
 }
 
 .review-card {
+  position: relative;
   background: #fff;
   border: 1px solid var(--color-stone);
   border-radius: 8px;
   padding: 1.5rem;
+  padding-bottom: 2.5rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   transition: opacity 0.3s ease, transform 0.3s ease, box-shadow var(--transition-fast), transform var(--transition-fast);
   opacity: 1;
@@ -349,6 +437,40 @@
   transform: scale(0.95);
 }
 
+.review-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.review-card__header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.review-card__avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-card__avatar--initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-cream);
+  background: var(--color-green);
+}
+
 .review-card__top {
   display: flex;
   align-items: center;
@@ -368,12 +490,28 @@
 }
 
 .review-card__google-wrap {
-  opacity: 0.7;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  opacity: 0.9;
 }
 
 .review-card__google {
   width: 20px;
   height: 20px;
+  flex-shrink: 0;
+}
+
+.review-card__verified {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-charcoal);
+  opacity: 0.8;
 }
 
 .review-card__name {
@@ -397,11 +535,12 @@
   font-family: var(--font-body);
   font-size: 0.8125rem;
   color: var(--color-stone);
-  margin-bottom: 0.75rem;
+  margin: 0 0 0.75rem;
 }
 
 .review-card__text-wrap {
   position: relative;
+  margin-bottom: 0.75rem;
 }
 
 .review-card__text {
@@ -413,28 +552,17 @@
   transition: max-height 0.35s var(--ease-out);
 }
 
-.review-card__text-wrap:not(.is-expanded) .review-card__text {
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.review-card__text-wrap.is-expanded .review-card__text {
-  display: block;
-}
-
 .review-card__read-more {
-  margin-top: 0.5rem;
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--color-gold);
+  display: inline;
+  margin: 0 0 0 0.25rem;
+  padding: 0;
+  font-family: Montserrat, var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-green);
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
   transition: opacity var(--transition-fast);
 }
 
@@ -500,7 +628,8 @@
 }
 
 .leave-review-section__btn:hover {
-  background: #c9a85e;
+  background: #1e5c38;
+  color: #fff;
   transform: translateY(-2px);
 }
 
@@ -635,7 +764,7 @@
   }
 
   .reviews-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .leave-review-section__inner {
@@ -648,5 +777,19 @@
 
   .reviews-final-cta__buttons .btn {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rating-bar__inner {
+    gap: 0.75rem;
+  }
+
+  .reviews-hero__rating {
+    font-size: clamp(3rem, 12vw, 4rem);
   }
 }

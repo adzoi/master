@@ -1,5 +1,30 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+* {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+/* ---------- Critical: prevent horizontal overflow ---------- */
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+img, video, iframe, svg {
+  max-width: 100%;
+  height: auto;
+}
 /* ============================================
    Leaf 2 Leaf Landscapes — Main Styles
    ============================================ */
@@ -46,16 +71,18 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text-primary);
   background: var(--bg-page);
   overflow-x: hidden;
+  word-wrap: break-word;
   transition: background var(--transition-med), color var(--transition-med);
 }
 
-img {
+img,
+video,
+iframe {
   max-width: 100%;
   height: auto;
   display: block;
@@ -79,12 +106,24 @@ ul, ol {
 }
 
 /* ---------- Layout ---------- */
-.container {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding-left: var(--container-pad);
-  padding-right: var(--container-pad);
+.container,
+[class*="__inner"],
+[class*="__content"],
+[class*="__wrap"] {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 4vw, 40px);
+  padding-right: clamp(16px, 4vw, 40px);
+  box-sizing: border-box;
 }
+
+/* Fluid typography (overridden by component-specific rules) */
+h1 { font-size: clamp(1.8rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.4rem, 4vw, 2.5rem); }
+h3 { font-size: clamp(1.1rem, 3vw, 1.8rem); }
+p { font-size: clamp(0.9rem, 2vw, 1.1rem); }
 
 /* ---------- NAVIGATION ---------- */
 .nav {
@@ -135,6 +174,7 @@ ul, ol {
   height: 62px;
   width: auto;
   display: block;
+  background: transparent !important;
 }
 
 .nav__links {
@@ -180,8 +220,10 @@ ul, ol {
   margin-top: 0;
   padding: 1rem 1.5rem 1.5rem;
   min-width: 720px;
+  max-width: calc(100vw - 32px);
   max-height: 80vh;
   overflow-y: auto;
+  overflow-x: hidden;
   background: var(--bg-card);
   border-top: 2px solid var(--color-gold);
   border-radius: 0 0 var(--radius-card) var(--radius-card);
@@ -364,6 +406,10 @@ ul, ol {
   visibility: visible;
 }
 
+.nav__mobile-logo {
+  display: none;
+}
+
 .nav__overlay-links {
   display: flex;
   flex-direction: column;
@@ -387,8 +433,13 @@ ul, ol {
 }
 
 .nav__overlay-links a.active {
-  color: var(--color-green);
+  color: var(--color-gold) !important;
   border-bottom: 2px solid var(--color-green);
+}
+
+.nav__overlay-links a[aria-current="page"],
+.nav__overlay .nav__overlay-links a.current {
+  color: var(--color-gold) !important;
 }
 
 .nav__overlay-cta {
@@ -515,6 +566,8 @@ body.nav-menu-open .about-hero {
   font-weight: 600;
   border-radius: var(--radius-pill);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+  min-height: 44px;
+  min-width: 44px;
 }
 
 .btn--cream {
@@ -564,19 +617,18 @@ body.nav-menu-open .about-hero {
 }
 
 .hero__logo {
-  background-color: #ffffff;
-  border-radius: 50%;
-  padding: 12px;
+  background: transparent !important;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
   width: 210px;
   max-width: 210px;
   height: 210px;
   margin-right: 0;
-  /* Force perfect circle wrapper around logo */
   display: flex;
   align-items: center;
   justify-content: center;
   aspect-ratio: 1 / 1;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 .hero__logo-img {
@@ -584,6 +636,7 @@ body.nav-menu-open .about-hero {
   height: auto;
   display: block;
   border-radius: 0;
+  background: transparent !important;
 }
 
 .hero__placeholder {
@@ -680,6 +733,9 @@ body.nav-menu-open .about-hero {
 }
 
 .hero__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
@@ -689,7 +745,7 @@ body.nav-menu-open .about-hero {
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--color-gold);
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.25rem;
 }
 
 .hero__stat-label {
@@ -1307,14 +1363,62 @@ body.nav-menu-open .about-hero {
 }
 
 .contact__details {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   font-size: 1rem;
-  line-height: 1.8;
 }
 
 .contact__details li {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
+  font-size: 1rem;
+  list-style: none;
+}
+
+.page-home .contact__details li {
+  color: #ffffff !important;
+  background: none !important;
+}
+
+.page-contact .contact__details li {
+  color: var(--color-green) !important;
+  background: none !important;
+}
+
+.contact__hours p,
+.contact__hours h3 {
+  color: var(--color-green);
+}
+
+.contact__hours h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contact__social {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.contact__social-label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-green);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.contact__social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
 }
 
 .contact__form {
@@ -1388,11 +1492,11 @@ body.nav-menu-open .about-hero {
 
 .footer__top {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
   gap: 2rem;
   align-items: start;
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(42, 42, 42, 0.12);
+  border-bottom: 1px solid rgba(245, 240, 232, 0.12);
 }
 
 .footer__brand .footer__logo {
@@ -1404,6 +1508,7 @@ body.nav-menu-open .about-hero {
   height: 60px;
   width: auto;
   display: block;
+  background: transparent !important;
 }
 
 .footer__tagline {
@@ -1411,7 +1516,7 @@ body.nav-menu-open .about-hero {
   font-style: italic;
   opacity: 0.9;
   margin-bottom: 1rem;
-  color: var(--color-green);
+  color: var(--color-green) !important;
 }
 
 .footer__social {
@@ -1441,28 +1546,38 @@ body.nav-menu-open .about-hero {
   height: 20px;
 }
 
+.footer__col {
+  min-width: 140px;
+}
+
 .footer__col-title {
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-green);
-  margin-bottom: 0.75rem;
+  color: var(--color-green) !important;
+  opacity: 1 !important;
+  margin-bottom: 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--color-green);
+  border-bottom: 1px solid rgba(245, 240, 232, 0.2);
 }
 
 .footer__col-links {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.5rem;
 }
 
 .footer__col-links a {
-  font-size: 0.9375rem;
-  color: var(--color-green);
-  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  opacity: 1 !important;
+  color: var(--color-green) !important;
+  transition: opacity 0.2s;
+}
+
+.footer__col-links a:hover {
+  opacity: 1;
+  color: var(--color-cream);
 }
 
 .footer a:hover {
@@ -1472,14 +1587,41 @@ body.nav-menu-open .about-hero {
 }
 
 .footer__contact {
-  font-size: 0.875rem;
-  line-height: 1.7;
-  margin-top: 0.75rem;
-  color: var(--color-green);
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .footer__contact p {
-  margin-bottom: 0.25rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: var(--color-green) !important;
+  opacity: 1 !important;
+  margin: 0;
+}
+
+/* Footer email row: align icon + text horizontally */
+.footer__email,
+.footer__contact-email,
+.footer__contact p:has(svg) {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.footer__contact p > span {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.footer__contact p > span svg {
+  display: block;
 }
 
 .footer__bottom {
@@ -1490,12 +1632,12 @@ body.nav-menu-open .about-hero {
   justify-content: space-between;
   gap: 0.5rem;
   font-size: 0.8125rem;
-  color: var(--color-green);
+  color: var(--color-green) !important;
 }
 
 .footer__bottom a {
   text-decoration: underline;
-  color: var(--color-green);
+  color: var(--color-green) !important;
 }
 
 .footer__bottom a:hover {
@@ -1572,16 +1714,67 @@ body.nav-menu-open .about-hero {
 /* ---------- Responsive: Tablet & below ---------- */
 @media (max-width: 768px) {
   :root {
-    --section-pad: 3rem;
+    --section-pad: clamp(2rem, 6vw, 5rem);
   }
 
-  .nav__links,
-  .nav__cta {
-    display: none;
+  /* General mobile container padding (exclude nav and chat) */
+  .container:not(.nav__inner):not(.l2l-chat-window):not(.l2l-chat-btn),
+  [class*="__inner"]:not(.nav__inner):not(.l2l-chat-window):not(.l2l-chat-btn),
+  [class*="__content"]:not(.nav__inner):not(.l2l-chat-window):not(.l2l-chat-btn) {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box;
   }
 
-  .nav__hamburger {
-    display: flex;
+  #nav .nav__inner,
+  header .nav__inner {
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: 48px 1fr 48px !important;
+    align-items: center !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  #nav .nav__logo,
+  header .nav__logo {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #nav .nav__burger,
+  #nav .nav__hamburger,
+  header .nav__burger,
+  header .nav__hamburger {
+    display: flex !important;
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+    justify-self: end !important;
+    margin: 0 !important;
+  }
+
+  /* Push any other nav children (links, cta) out of the grid flow */
+  #nav .nav__links,
+  #nav .nav__cta,
+  header .nav__links,
+  header .nav__cta {
+    display: none !important;
+  }
+
+  /* Hide breadcrumb navigation on mobile */
+  .breadcrumb,
+  .breadcrumbs,
+  .page-breadcrumb,
+  [class*="breadcrumb"] {
+    display: none !important;
   }
 
   /* Mobile hero layout tweaks */
@@ -1597,13 +1790,24 @@ body.nav-menu-open .about-hero {
 
   .hero__inner {
     flex-direction: column;
-    padding: 2rem var(--container-pad) 1.5rem;
+    padding: 2rem 20px 1.5rem;
     text-align: center;
   }
 
   .hero__content {
     flex: none;
     width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero__visual,
+  .hero__logo {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
   }
 
   .hero__headline {
@@ -1622,8 +1826,7 @@ body.nav-menu-open .about-hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
+    gap: 12px;
     margin-top: 1.5rem;
   }
 
@@ -1638,18 +1841,155 @@ body.nav-menu-open .about-hero {
   }
 
   .hero__buttons .btn {
-    width: auto;
-    min-width: 200px;
-    max-width: 260px;
-    display: block;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 24px;
+    font-size: 15px;
     text-align: center;
-    padding: 0.85rem 1.5rem;
   }
 
-  /* Hide large hero logo on mobile */
+  /* Service page hero buttons */
+  .service-hero__actions,
+  .service-hero__buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .service-hero__actions .btn,
+  .service-hero__buttons .btn,
+  .service-hero__actions a,
+  .service-hero__buttons a {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* About page: reduce white circle behind logo */
+  .about-hero__image-wrap,
+  .about-hero__circle,
+  .about-founder-logo {
+    width: 220px !important;
+    height: 220px !important;
+    margin: 0 auto !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .about-founder-logo__img {
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Reviews page: rating bar and header - prevent text overlay */
+  .rating-bar__inner,
+  .reviews-hero,
+  .reviews-hero__content {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 8px !important;
+  }
+
+  /* Reviews page: Leave Us a Google Review button centered */
+  .leave-review-section,
+  .leave-review-section__inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* CTA buttons (Get a Free Quote, See Our Work) - center across all pages */
+  .cta-section__actions,
+  .hero__actions,
+  .section-cta__actions,
+  .about-cta__buttons,
+  .reviews-final-cta__buttons,
+  .gallery-cta__buttons,
+  .hero__buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .cta-section__actions .btn,
+  .hero__actions .btn,
+  .section-cta__actions .btn,
+  .cta-section__actions a,
+  .hero__actions a,
+  .section-cta__actions a,
+  .about-cta__buttons .btn,
+  .about-cta__buttons a,
+  .reviews-final-cta__buttons .btn,
+  .reviews-final-cta__buttons a,
+  .gallery-cta__buttons .btn,
+  .gallery-cta__buttons a,
+  .hero__buttons .btn,
+  .hero__buttons a {
+    width: 100% !important;
+    max-width: 320px !important;
+    text-align: center !important;
+  }
+
+  /* Contact/enquiry form submit button - center on mobile */
+  .contact-form__submit,
+  .contact-page__submit,
+  .contact-page__submit-wrap,
+  form .btn[type="submit"],
+  button[type="submit"] {
+    display: block !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    text-align: center !important;
+  }
+
+  .home-carousel {
+    padding: var(--section-pad) clamp(16px, 4vw, 40px);
+  }
+  .home-carousel__track {
+    height: 320px;
+  }
+
+  /* Services grid container */
+  .services__grid,
+  .services-grid,
+  section#services [class*="__grid"],
+  section#services [class*="__inner"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Individual service cards */
+  .services__grid > *,
+  .services-grid > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    border-radius: 16px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Hero logo: show on mobile with max size */
   .hero__logo {
-    display: none;
+    display: flex;
+    max-width: 200px;
+    max-height: 200px;
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero__logo-img {
+    max-width: 100%;
+    height: auto;
   }
 
   /* Stats: three in a single row */
@@ -1676,8 +2016,36 @@ body.nav-menu-open .about-hero {
     letter-spacing: 0.05em;
   }
 
+  [class*="__tags"],
+  [class*="__pills"],
+  [class*="__chips"] {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
+  [class*="services__tags"],
+  [class*="__tags"],
+  [class*="__pills"] {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 6px !important;
+  }
+
+  [class*="services__tag"],
+  [class*="__tag"],
+  [class*="__pill"] {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    max-width: none !important;
+    flex-shrink: 1 !important;
+    word-break: break-word !important;
+  }
+
   .services__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   .about-strip__inner {
     grid-template-columns: 1fr;
@@ -1730,6 +2098,25 @@ body.nav-menu-open .about-hero {
   .nav__overlay.open {
     opacity: 1;
     visibility: visible;
+  }
+
+  .nav__overlay {
+    flex-direction: column;
+  }
+
+  .nav__mobile-logo {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 16px;
+  }
+
+  .nav__mobile-logo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    background: transparent !important;
   }
 
   .nav__overlay-links {
@@ -1796,12 +2183,77 @@ body.nav-menu-open .about-hero {
   }
 }
 
-/* ---------- Chat widget tooltip (above floating button) ---------- */
+/* ---------- Responsive: Small mobile (hero announce, stats, headline) ---------- */
+@media (max-width: 480px) {
+  .hero__announce {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .hero__announce-inner {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .hero__announce .btn,
+  .hero__announce-cta {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .hero__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__stat-divider {
+    display: none;
+  }
+
+  .hero__headline {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .home-carousel__track {
+    height: 320px;
+  }
+  .home-carousel__panel--active .home-carousel__panel-content {
+    padding: 1rem;
+    left: 20px;
+    bottom: 40px;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+}
+
+/* ---------- Chat widget tooltip (to left of chat button only) ---------- */
 .l2l-chat-tooltip {
   position: fixed;
-  bottom: 94px;
-  right: 28px;
-  z-index: 9997;
+  bottom: 28px;
+  right: 98px;
+  z-index: 9999;
   max-width: 260px;
   padding: 0.75rem 2rem 0.75rem 1rem;
   background: #ffffff;
@@ -1823,11 +2275,12 @@ body.nav-menu-open .about-hero {
 .l2l-chat-tooltip::after {
   content: '';
   position: absolute;
-  bottom: -10px;
-  right: 24px;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
   border: 10px solid transparent;
-  border-top-color: var(--color-green);
-  border-bottom: none;
+  border-left-color: var(--color-green);
+  border-right: none;
 }
 .l2l-chat-tooltip__close {
   position: absolute;
@@ -1938,5 +2391,32 @@ body.nav-menu-open .about-hero {
   }
   .chat-cta-section__mockup {
     order: -1;
+  }
+}
+
+/* ---------- Chat widget: scroll trap (prevent overscroll bleed) ---------- */
+.l2l-chat-window {
+  overscroll-behavior: contain;
+}
+
+.l2l-chat-messages {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ---------- Chat widget: mobile window size ---------- */
+@media (max-width: 480px) {
+  .l2l-chat-window {
+    width: calc(100vw - 32px) !important;
+    height: 70vh !important;
+    right: 16px !important;
+    bottom: 90px !important;
+  }
+  .l2l-chat-btn,
+  #whatsapp-float-btn {
+    bottom: 24px;
+  }
+  #whatsapp-float-btn {
+    bottom: 92px;
   }
 }

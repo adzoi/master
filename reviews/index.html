@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/reviews.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/reviews.css">
 </head>
 <body class="page-reviews">
 
@@ -18,7 +18,7 @@
     <div class="nav__inner">
       <a href="../home/index.html" class="nav__logo">
         <img
-          src="../images/logo.png"
+          src="/images/logo.png"
           alt="Leaf 2 Leaf Landscapes"
           class="nav__logo-img"
         >
@@ -29,10 +29,29 @@
           <a href="../services/index.html">Services</a>
           <div class="nav__dropdown">
             <div class="nav__dropdown-inner">
-              <div class="nav__dropdown-col"><h3>Paving & Driveways</h3><a href="../services/paving-driveways/driveways.html">Driveways</a><a href="../services/paving-driveways/resin-bound.html">Resin-Bound Surfaces</a><a href="../services/paving-driveways/block-paving.html">Block Paving</a><a href="../services/paving-driveways/flagging.html">Flagging</a><a href="../services/paving-driveways/patios.html">Patios</a><a href="../services/paving-driveways/kerbs-walling.html">Kerbs & Walling</a><a href="../services/paving-driveways/gravel-driveways.html">Gravel Driveways</a></div>
-              <div class="nav__dropdown-col"><h3>Garden Design & Planting</h3><a href="../services/garden-design/landscaping-design.html">Landscaping & Design</a><a href="../services/garden-design/flower-bed-design.html">Flower Bed Design</a><a href="../services/garden-design/natural-stone.html">Natural Stone</a><a href="../services/garden-design/planting-services.html">Planting Services</a><a href="../services/garden-design/garden-features.html">Garden Features</a><a href="../services/garden-design/porcelain-paving.html">Porcelain Paving</a></div>
-              <div class="nav__dropdown-col"><h3>Lawn & Fencing</h3><a href="../services/lawn-fencing/new-lawn-turf.html">New Lawn & Turf</a><a href="../services/lawn-fencing/artificial-grass.html">Artificial Grass</a><a href="../services/lawn-fencing/garden-fencing.html">Garden Fencing</a></div>
-              <a href="../services/mobile-showroom/index.html" class="nav__dropdown-featured">Mobile Showroom — Ireland's First · Learn More →</a>
+              <div class="nav__dropdown-col">
+                <h3>Paving & Driveways</h3>
+                <a href="/services/paving-driveways/driveways.html">Driveways</a>
+                <a href="/services/paving-driveways/resin-bound.html">Resin-Bound Surfaces</a>
+                <a href="/services/paving-driveways/porcelain-paving.html">Porcelain Paving</a>
+                <a href="/services/paving-driveways/granite-paving.html">Granite Paving</a>
+                <a href="/services/paving-driveways/gravel-driveways.html">Gravel Driveways</a>
+              </div>
+              <div class="nav__dropdown-col">
+                <h3>Garden Design & Planting</h3>
+                <a href="/services/garden-design/landscaping-design.html">Landscaping & Design</a>
+                <a href="/services/garden-design/planting-services.html">Planting Services</a>
+                <a href="/services/garden-design/flowerbeds.html">Flowerbeds</a>
+                <a href="/services/garden-design/sheds.html">Sheds</a>
+                <a href="/services/garden-design/gardening-services.html">Gardening Services</a>
+              </div>
+              <div class="nav__dropdown-col">
+                <h3>Lawn & Fencing</h3>
+                <a href="/services/lawn-fencing/new-lawn-turf.html">New Lawn & Turf</a>
+                <a href="/services/lawn-fencing/artificial-grass.html">Artificial Grass</a>
+                <a href="/services/lawn-fencing/garden-fencing.html">Garden Fencing</a>
+              </div>
+              <a href="/services/mobile-showroom/index.html" class="nav__dropdown-featured">Mobile Showroom — Ireland's First · Learn More →</a>
             </div>
           </div>
         </div>
@@ -45,6 +64,9 @@
       <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
     <div class="nav__overlay" id="nav-overlay">
+      <div class="nav__mobile-logo">
+        <img src="/images/logo.png" alt="Leaf 2 Leaf Landscapes" onerror="this.style.display='none'">
+      </div>
       <nav class="nav__overlay-links" id="nav-overlay-links">
         <a href="../home/index.html">Home</a>
         <a href="../services/index.html">Services</a>
@@ -66,9 +88,9 @@
       <div class="reviews-hero__content">
         <p class="reviews-hero__label">VERIFIED CLIENT REVIEWS · DUBLIN</p>
         <h1 class="reviews-hero__title">What Our Clients Say</h1>
-        <p class="reviews-hero__sub">Over 200 five-star reviews from homeowners across County Dublin. Don't take our word for it — read theirs.</p>
+        <p class="reviews-hero__sub">Over 180 five-star reviews from homeowners across County Dublin. Don't take our word for it — read theirs.</p>
         <div class="reviews-hero__badge">
-          <span class="reviews-hero__rating" id="hero-rating">5.0</span>
+          <span class="reviews-hero__rating" id="hero-rating" data-target="5.0">5.0</span>
           <span class="reviews-hero__stars" aria-hidden="true">
             <svg class="reviews-hero__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg class="reviews-hero__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -76,7 +98,7 @@
             <svg class="reviews-hero__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg class="reviews-hero__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </span>
-          <span class="reviews-hero__meta">200+ Reviews · Google Verified</span>
+          <span class="reviews-hero__meta">180+ Reviews · Google Verified</span>
         </div>
       </div>
     </section>
@@ -85,22 +107,22 @@
     <section class="rating-bar" id="rating-bar">
       <div class="rating-bar__inner">
         <div class="rating-bar__item reveal">
-          <span class="rating-bar__num" id="stat-rating" data-target="5.0">0</span>
+          <span class="rating-bar__num" id="stat-rating" data-target="5.0">5.0★</span>
           <span class="rating-bar__label">Overall Rating</span>
         </div>
         <div class="rating-bar__divider" aria-hidden="true"></div>
         <div class="rating-bar__item reveal">
-          <span class="rating-bar__num" id="stat-reviews" data-target="200">0</span>
+          <span class="rating-bar__num" id="stat-reviews" data-target="180">180+</span>
           <span class="rating-bar__label">Total Reviews</span>
         </div>
         <div class="rating-bar__divider" aria-hidden="true"></div>
         <div class="rating-bar__item reveal">
-          <span class="rating-bar__num" id="stat-recommend" data-target="98">0</span>
+          <span class="rating-bar__num" id="stat-recommend" data-target="98">98%</span>
           <span class="rating-bar__label">Would Recommend</span>
         </div>
         <div class="rating-bar__divider" aria-hidden="true"></div>
         <div class="rating-bar__item reveal">
-          <span class="rating-bar__num" id="stat-years" data-target="35">0</span>
+          <span class="rating-bar__num" id="stat-years" data-target="35">35+</span>
           <span class="rating-bar__label">Years Serving Dublin</span>
         </div>
       </div>
@@ -111,7 +133,7 @@
       <div class="featured-review__inner container">
         <span class="featured-review__quote-mark" aria-hidden="true">"</span>
         <blockquote class="featured-review__blockquote">
-          <p class="featured-review__text">Mike and his team completely transformed our back garden. We had a vision and they exceeded it in every way. The attention to detail was incredible — every stone perfectly laid, every plant exactly where it should be. Three months on and the neighbours are still asking who did it.</p>
+          <p class="featured-review__text">Mike and his team have done an exceptional work to bring our design to reality. They accommodated every single request and detail, and went above and beyond to make sure everything was spot on. Could not recommend them enough!</p>
           <footer class="featured-review__footer">
             <span class="featured-review__stars" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -120,32 +142,28 @@
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </span>
-            <cite class="featured-review__cite">Sarah M.</cite>
-            <span class="featured-review__meta">Foxrock, Dublin · Garden Design & Landscaping</span>
+            <cite class="featured-review__cite">Iván Elhart Madden</cite>
+            <span class="featured-review__meta featured-review__meta--google">
+              <svg class="featured-review__google-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+              Verified Google Review
+            </span>
           </footer>
         </blockquote>
-        <span class="featured-review__verified">Verified Google Review</span>
       </div>
     </section>
 
-    <!-- ========== FILTER BAR ========== -->
-    <div class="reviews-filter-bar" id="reviews-filter-bar">
-      <div class="reviews-filter-bar__inner">
-        <button type="button" class="reviews-filter-bar__btn is-active" data-filter="all">All Reviews</button>
-        <button type="button" class="reviews-filter-bar__btn" data-filter="driveways">Driveways</button>
-        <button type="button" class="reviews-filter-bar__btn" data-filter="patios-paving">Patios & Paving</button>
-        <button type="button" class="reviews-filter-bar__btn" data-filter="garden-design">Garden Design</button>
-        <button type="button" class="reviews-filter-bar__btn" data-filter="planting">Planting</button>
-        <button type="button" class="reviews-filter-bar__btn" data-filter="resin-bound">Resin-Bound</button>
-        <button type="button" class="reviews-filter-bar__btn" data-filter="lawns-fencing">Lawns & Fencing</button>
-        <button type="button" class="reviews-filter-bar__btn" data-filter="general">General</button>
-      </div>
-    </div>
-
     <!-- ========== REVIEWS GRID ========== -->
-    <!-- To add new reviews: add an object to the reviews array in the <script> block -->
     <section class="reviews-section">
       <div class="container">
+        <div class="reviews-summary" id="reviews-summary">
+          <span class="reviews-summary__rating" id="reviews-summary-rating">★★★★★ —</span>
+          <span class="reviews-summary__meta" id="reviews-summary-meta">Based on Google reviews</span>
+          <a href="https://www.google.com/maps?ll=53.276982,-6.205679&z=14&t=m&hl=en&gl=IE&mapclient=embed&cid=7389538408450652316" target="_blank" rel="noopener noreferrer" class="reviews-summary__link">See all reviews on Google</a>
+        </div>
+        <div class="reviews-error" id="reviews-error" hidden>
+          <p>Couldn't load reviews right now.</p>
+          <p>Read our reviews directly on <a href="https://www.google.com/maps?ll=53.276982,-6.205679&z=14&t=m&hl=en&gl=IE&mapclient=embed&cid=7389538408450652316" target="_blank" rel="noopener noreferrer">Google</a>.</p>
+        </div>
         <div class="reviews-grid" id="reviews-grid"></div>
       </div>
     </section>
@@ -157,7 +175,7 @@
           <h2 class="leave-review-section__title">Happy With Our Work?</h2>
           <p class="leave-review-section__body">Your review means the world to us — and helps other Dublin homeowners find a landscaper they can trust.</p>
           <!-- Replace # with your Google Business review link. To get it: search your business on Google → click "Reviews" → "Get more reviews" → copy the link -->
-          <a href="#" target="_blank" rel="noopener noreferrer" class="btn leave-review-section__btn">Leave Us a Google Review</a>
+          <a href="https://search.google.com/local/writereview?placeid=ChIJ4YIR1k0JZ0gRnHjO8QfqjGY" target="_blank" rel="noopener noreferrer" class="btn leave-review-section__btn">Leave Us a Google Review</a>
         </div>
         <div class="leave-review-section__right">
           <div class="leave-review-section__note">
@@ -185,10 +203,10 @@
   </main>
 
   <!-- ========== FOOTER ========== -->
-  <footer class="footer">
+    <footer class="footer">
     <div class="container footer__top">
       <div class="footer__brand">
-        <a href="../home/index.html" class="footer__logo"><img src="../images/logo.png" alt="Leaf 2 Leaf Landscapes" class="footer__logo-img"></a>
+        <a href="/home/index.html" class="footer__logo"><img src="/images/logo.png" alt="Leaf 2 Leaf Landscapes" class="footer__logo-img"></a>
         <p class="footer__tagline">Dublin's Outdoor Spaces, Reimagined.</p>
         <div class="footer__social">
           <a href="https://www.facebook.com/leaf2leaflandscapes" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
@@ -201,37 +219,34 @@
       <div class="footer__col">
         <h3 class="footer__col-title">Paving & Driveways</h3>
         <div class="footer__col-links">
-          <a href="../services/paving-driveways/driveways.html">Driveways</a>
-          <a href="../services/paving-driveways/resin-bound.html">Resin-Bound Surfaces</a>
-          <a href="../services/paving-driveways/block-paving.html">Block Paving</a>
-          <a href="../services/paving-driveways/flagging.html">Flagging</a>
-          <a href="../services/paving-driveways/patios.html">Patios</a>
-          <a href="../services/paving-driveways/kerbs-walling.html">Kerbs & Walling</a>
-          <a href="../services/paving-driveways/gravel-driveways.html">Gravel Driveways</a>
+          <a href="/services/paving-driveways/driveways.html">Driveways</a>
+          <a href="/services/paving-driveways/resin-bound.html">Resin-Bound Surfaces</a>
+          <a href="/services/paving-driveways/porcelain-paving.html">Porcelain Paving</a>
+          <a href="/services/paving-driveways/granite-paving.html">Granite Paving</a>
+          <a href="/services/paving-driveways/gravel-driveways.html">Gravel Driveways</a>
         </div>
       </div>
       <div class="footer__col">
         <h3 class="footer__col-title">Garden & Lawn</h3>
         <div class="footer__col-links">
-          <a href="../services/garden-design/landscaping-design.html">Landscaping & Design</a>
-          <a href="../services/garden-design/flower-bed-design.html">Flower Bed Design</a>
-          <a href="../services/garden-design/natural-stone.html">Natural Stone</a>
-          <a href="../services/garden-design/planting-services.html">Planting Services</a>
-          <a href="../services/garden-design/garden-features.html">Garden Features</a>
-          <a href="../services/garden-design/porcelain-paving.html">Porcelain Paving</a>
-          <a href="../services/lawn-fencing/new-lawn-turf.html">New Lawn & Turf</a>
-          <a href="../services/lawn-fencing/artificial-grass.html">Artificial Grass</a>
-          <a href="../services/lawn-fencing/garden-fencing.html">Garden Fencing</a>
+          <a href="/services/garden-design/landscaping-design.html">Landscaping & Design</a>
+          <a href="/services/garden-design/planting-services.html">Planting Services</a>
+          <a href="/services/garden-design/flowerbeds.html">Flowerbeds</a>
+          <a href="/services/garden-design/sheds.html">Sheds</a>
+          <a href="/services/garden-design/gardening-services.html">Gardening Services</a>
+          <a href="/services/lawn-fencing/new-lawn-turf.html">New Lawn & Turf</a>
+          <a href="/services/lawn-fencing/artificial-grass.html">Artificial Grass</a>
+          <a href="/services/lawn-fencing/garden-fencing.html">Garden Fencing</a>
         </div>
       </div>
       <div class="footer__col">
         <h3 class="footer__col-title">Company</h3>
         <div class="footer__col-links">
-          <a href="../about/index.html">About Us</a>
-          <a href="../gallery/index.html">Our Work</a>
-          <a href="index.html" class="active">Reviews</a>
-          <a href="../contact.html">Contact Us</a>
-          <a href="../contact.html">Get a Free Quote</a>
+          <a href="/about/index.html">About Us</a>
+          <a href="/gallery/index.html">Our Work</a>
+          <a href="/reviews/index.html">Reviews</a>
+          <a href="/contact.html">Contact Us</a>
+          <a href="/contact.html">Get a Free Quote</a>
         </div>
         <div class="footer__contact">
           <p>📞 (01) 901 2633</p>
@@ -242,13 +257,15 @@
       </div>
     </div>
     <div class="footer__bottom container">
-      <p>© 2026 Leaf 2 Leaf Landscapes · All rights reserved · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+      <p>© 2026 Leaf 2 Leaf Landscapes · All rights reserved · <a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms-of-service.html">Terms of Service</a> · <a href="#" id="cookie-settings-link">Cookie Settings</a></p>
       <span class="footer__bottom-serving">Serving all of County Dublin</span>
     </div>
   </footer>
 
-  <script src="../js/main.js"></script>
-  <script src="../js/reviews.js"></script>
-  <script src="../js/chat-widget.js"></script>
+  <script src="/js/countup.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/reviews.js"></script>
+  <script src="/js/chat-widget.js"></script>
+  <script src="/js/cookie-banner.js"></script>
 </body>
 </html>

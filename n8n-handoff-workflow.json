@@ -1,0 +1,115 @@
+{
+  "_comment": "Import this workflow into n8n. Before activating: 1) Update Gmail 'sendTo' with real owner email. 2) Configure Twilio HTTP Request node with credentials and set 'From' to your Twilio WhatsApp number. 3) Webhook URL will be https://YOUR_N8N_INSTANCE/webhook/handoff - ensure chat-widget.js HANDOFF_WEBHOOK_URL matches.",
+  "name": "L2L Chat Handoff",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "handoff",
+        "httpMethod": "POST",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "handoff"
+    },
+    {
+      "parameters": {
+        "sendTo": "bagdaanbagdaan.lol@gmail.com",
+        "subject": "🙋 Customer needs help — Live Chat Handoff",
+        "emailType": "html",
+        "message": "A customer on the website needs to speak to a real person.<br><br><strong>Reason:</strong> {{ $json.reason }}<br><strong>Their last message:</strong> {{ $json.lastMessage }}<br><strong>Page they were on:</strong> {{ $json.page }}<br><strong>Time:</strong> {{ $json.timestamp }}<br><br><strong>Last 6 messages:</strong><br>{{ $json.conversation.map(m => m.role + ': ' + m.content).join('<br>') }}",
+        "options": {}
+      },
+      "name": "Gmail",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [460, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.twilio.com/2010-04-01/Accounts/={{ $credentials.twilioSid }}/Messages.json",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "To",
+              "value": "whatsapp:+995597006664"
+            },
+            {
+              "name": "From",
+              "value": "whatsapp:YOUR_TWILIO_WHATSAPP_NUMBER"
+            },
+            {
+              "name": "Body",
+              "value": "🙋 A customer needs help on the website!\nReason: {{ $json.reason }}\nTheir message: {{ $json.lastMessage }}\nPage: {{ $json.page }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Twilio WhatsApp",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [460, 400]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"status\": \"ok\" } }}"
+      },
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [680, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Twilio WhatsApp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Twilio WhatsApp": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "1"
+}

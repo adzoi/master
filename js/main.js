@@ -286,7 +286,8 @@
   const revealEls = document.querySelectorAll(
     '.services__title, .services__sub, .service-card, .about-strip__quote-col, .about-strip__list, ' +
     '.gallery__title, .gallery__item, .gallery__more, .testimonials__title, .testimonial-card, ' +
-    '.contact__info, .contact__form-wrap'
+    '.contact__info, .contact__form-wrap, .page-reviews .rating-bar__item.reveal, ' +
+    '.page-about .timeline__item, .page-about .team-card, .page-about .value-item'
   );
 
   function addRevealClass(el) {
@@ -312,7 +313,7 @@
     observer.observe(el);
   });
 
-  // ----- Chat tooltip above floating button (show on load, hide after 6s or dismiss) -----
+  // ----- Chat tooltip (show on load, auto-hide after 20s, reappear on chat button hover; never show after chat opened) -----
   var CHAT_TOOLTIP_KEY = 'l2l_chat_tooltip_dismissed';
   document.addEventListener('DOMContentLoaded', function () {
     setTimeout(function () {
@@ -329,16 +330,35 @@
 
       document.body.appendChild(tooltip);
 
+      var banner = document.getElementById('l2l-cookie-banner');
+      if (banner) {
+        var h = banner.offsetHeight;
+        tooltip.style.bottom = (h + 28) + 'px';
+      }
+
+      var hideTimeout = null;
+
       function hideTooltip() {
         tooltip.classList.add('hidden');
-        sessionStorage.setItem(CHAT_TOOLTIP_KEY, '1');
+        try {
+          sessionStorage.setItem(CHAT_TOOLTIP_KEY, '1');
+        } catch (e) {}
+      }
+
+      function showTooltip() {
+        if (sessionStorage.getItem(CHAT_TOOLTIP_KEY)) return;
+        if (hideTimeout) clearTimeout(hideTimeout);
+        tooltip.classList.remove('hidden');
+        hideTimeout = setTimeout(hideTooltip, 20000);
       }
 
       var closeBtn = tooltip.querySelector('.l2l-chat-tooltip__close');
       if (closeBtn) closeBtn.addEventListener('click', hideTooltip);
 
-      setTimeout(hideTooltip, 20000);
-    }, 0);
+      chatBtn.addEventListener('mouseenter', showTooltip);
+
+      showTooltip();
+    }, 100);
   });
 
   // ----- "Chat With Us Now" section button opens chat widget -----

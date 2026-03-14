@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/gallery.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/gallery.css">
 </head>
 <body class="page-gallery">
 
@@ -18,7 +18,7 @@
     <div class="nav__inner">
       <a href="../home/index.html" class="nav__logo">
         <img
-          src="../images/logo.png"
+          src="/images/logo.png"
           alt="Leaf 2 Leaf Landscapes"
           class="nav__logo-img"
         >
@@ -29,10 +29,29 @@
           <a href="../services/index.html">Services</a>
           <div class="nav__dropdown">
             <div class="nav__dropdown-inner">
-              <div class="nav__dropdown-col"><h3>Paving & Driveways</h3><a href="../services/paving-driveways/driveways.html">Driveways</a><a href="../services/paving-driveways/resin-bound.html">Resin-Bound Surfaces</a><a href="../services/paving-driveways/block-paving.html">Block Paving</a><a href="../services/paving-driveways/flagging.html">Flagging</a><a href="../services/paving-driveways/patios.html">Patios</a><a href="../services/paving-driveways/kerbs-walling.html">Kerbs & Walling</a><a href="../services/paving-driveways/gravel-driveways.html">Gravel Driveways</a></div>
-              <div class="nav__dropdown-col"><h3>Garden Design & Planting</h3><a href="../services/garden-design/landscaping-design.html">Landscaping & Design</a><a href="../services/garden-design/flower-bed-design.html">Flower Bed Design</a><a href="../services/garden-design/natural-stone.html">Natural Stone</a><a href="../services/garden-design/planting-services.html">Planting Services</a><a href="../services/garden-design/garden-features.html">Garden Features</a><a href="../services/garden-design/porcelain-paving.html">Porcelain Paving</a></div>
-              <div class="nav__dropdown-col"><h3>Lawn & Fencing</h3><a href="../services/lawn-fencing/new-lawn-turf.html">New Lawn & Turf</a><a href="../services/lawn-fencing/artificial-grass.html">Artificial Grass</a><a href="../services/lawn-fencing/garden-fencing.html">Garden Fencing</a></div>
-              <a href="../services/mobile-showroom/index.html" class="nav__dropdown-featured">Mobile Showroom — Ireland's First · Learn More →</a>
+              <div class="nav__dropdown-col">
+                <h3>Paving & Driveways</h3>
+                <a href="/services/paving-driveways/driveways.html">Driveways</a>
+                <a href="/services/paving-driveways/resin-bound.html">Resin-Bound Surfaces</a>
+                <a href="/services/paving-driveways/porcelain-paving.html">Porcelain Paving</a>
+                <a href="/services/paving-driveways/granite-paving.html">Granite Paving</a>
+                <a href="/services/paving-driveways/gravel-driveways.html">Gravel Driveways</a>
+              </div>
+              <div class="nav__dropdown-col">
+                <h3>Garden Design & Planting</h3>
+                <a href="/services/garden-design/landscaping-design.html">Landscaping & Design</a>
+                <a href="/services/garden-design/planting-services.html">Planting Services</a>
+                <a href="/services/garden-design/flowerbeds.html">Flowerbeds</a>
+                <a href="/services/garden-design/sheds.html">Sheds</a>
+                <a href="/services/garden-design/gardening-services.html">Gardening Services</a>
+              </div>
+              <div class="nav__dropdown-col">
+                <h3>Lawn & Fencing</h3>
+                <a href="/services/lawn-fencing/new-lawn-turf.html">New Lawn & Turf</a>
+                <a href="/services/lawn-fencing/artificial-grass.html">Artificial Grass</a>
+                <a href="/services/lawn-fencing/garden-fencing.html">Garden Fencing</a>
+              </div>
+              <a href="/services/mobile-showroom/index.html" class="nav__dropdown-featured">Mobile Showroom — Ireland's First · Learn More →</a>
             </div>
           </div>
         </div>
@@ -45,6 +64,9 @@
       <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
     <div class="nav__overlay" id="nav-overlay">
+      <div class="nav__mobile-logo">
+        <img src="/images/logo.png" alt="Leaf 2 Leaf Landscapes" onerror="this.style.display='none'">
+      </div>
       <nav class="nav__overlay-links" id="nav-overlay-links">
         <a href="../home/index.html">Home</a>
         <a href="../services/index.html">Services</a>
@@ -72,16 +94,23 @@
 
     <!-- ========== FILTER BAR (Sticky below nav) ========== -->
     <div class="filter-bar" id="filter-bar">
-      <div class="filter-bar__inner">
-        <button type="button" class="filter-bar__btn is-active" data-filter="all">All Work</button>
-        <button type="button" class="filter-bar__btn" data-filter="driveways">Driveways</button>
-        <button type="button" class="filter-bar__btn" data-filter="patios">Patios</button>
-        <button type="button" class="filter-bar__btn" data-filter="resin-bound">Resin-Bound</button>
-        <button type="button" class="filter-bar__btn" data-filter="garden-design">Garden Design</button>
-        <button type="button" class="filter-bar__btn" data-filter="planting">Planting</button>
-        <button type="button" class="filter-bar__btn" data-filter="lawns">Lawns</button>
-        <button type="button" class="filter-bar__btn" data-filter="fencing">Fencing</button>
-        <button type="button" class="filter-bar__btn" data-filter="natural-stone">Natural Stone</button>
+      <div class="container">
+        <div class="gallery__filters">
+          <button type="button" class="gallery__filter gallery__filter--active" data-filter="all">All Work</button>
+          <button type="button" class="gallery__filter" data-filter="driveways">Driveways</button>
+          <button type="button" class="gallery__filter" data-filter="resin-bound">Resin-Bound</button>
+          <button type="button" class="gallery__filter" data-filter="porcelain-paving">Porcelain Paving</button>
+          <button type="button" class="gallery__filter" data-filter="granite-paving">Granite Paving</button>
+          <button type="button" class="gallery__filter" data-filter="gravel-driveways">Gravel Driveways</button>
+          <button type="button" class="gallery__filter" data-filter="landscaping">Landscaping</button>
+          <button type="button" class="gallery__filter" data-filter="planting">Planting</button>
+          <button type="button" class="gallery__filter" data-filter="flowerbeds">Flowerbeds</button>
+          <button type="button" class="gallery__filter" data-filter="sheds">Sheds</button>
+          <button type="button" class="gallery__filter" data-filter="gardening">Gardening</button>
+          <button type="button" class="gallery__filter" data-filter="lawn-turf">Lawn & Turf</button>
+          <button type="button" class="gallery__filter" data-filter="artificial-grass">Artificial Grass</button>
+          <button type="button" class="gallery__filter" data-filter="fencing">Fencing</button>
+        </div>
       </div>
     </div>
 
@@ -98,158 +127,746 @@
           - Recommended dimensions: 800x600px minimum, 1600x1200px for lightbox
         -->
         <div class="gallery-grid" id="gallery-grid">
-          <!-- 4 × Driveways -->
-          <div class="gallery-item gallery-item--h260 reveal" data-category="driveways" data-index="0">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal1/800/600" alt="Block paving driveway" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">BLOCK PAVING DRIVEWAY</span>
-              <span class="gallery-item__location">Rathfarnham, Dublin 14</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <div class="gallery-item gallery-item--h340 reveal" data-category="driveways" data-index="1">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal2/800/600" alt="Driveway" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">DRIVEWAY</span>
-              <span class="gallery-item__location">Stillorgan, Dublin 18</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <div class="gallery-item gallery-item--h220 reveal" data-category="driveways" data-index="2">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal3/800/600" alt="Gravel driveway" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">GRAVEL DRIVEWAY</span>
-              <span class="gallery-item__location">Foxrock, Dublin 18</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <div class="gallery-item gallery-item--h400 reveal" data-category="driveways" data-index="3">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal4/800/600" alt="Driveway and kerbs" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">DRIVEWAY & KERBS</span>
-              <span class="gallery-item__location">Dundrum, Dublin 14</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <!-- 3 × Patios -->
-          <div class="gallery-item gallery-item--h300 reveal" data-category="patios" data-index="4">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal5/800/600" alt="Patio and flagging" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">PATIO & FLAGGING</span>
-              <span class="gallery-item__location">Cabinteely, Dublin 18</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <div class="gallery-item gallery-item--h280 reveal" data-category="patios" data-index="5">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal6/800/600" alt="Patio" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">PATIO</span>
-              <span class="gallery-item__location">Blackrock, Dublin 4</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <div class="gallery-item gallery-item--h260 reveal" data-category="patios" data-index="6">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal3/800/600" alt="Porcelain patio" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">PORCELAIN PATIO</span>
-              <span class="gallery-item__location">Dalkey, Dublin 4</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <!-- 2 × Resin-Bound -->
-          <div class="gallery-item gallery-item--h340 reveal" data-category="resin-bound" data-index="7">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal2/800/600" alt="Resin-bound driveway" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">RESIN-BOUND DRIVEWAY</span>
-              <span class="gallery-item__location">Sandyford, Dublin 18</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <div class="gallery-item gallery-item--h220 reveal" data-category="resin-bound" data-index="8">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal4/800/600" alt="Resin-bound surface" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">RESIN-BOUND SURFACE</span>
-              <span class="gallery-item__location">Dún Laoghaire, Dublin 4</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <!-- 3 × Garden Design -->
-          <div class="gallery-item gallery-item--h400 reveal" data-category="garden-design" data-index="9">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal7/800/600" alt="Garden design" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">GARDEN DESIGN</span>
-              <span class="gallery-item__location">Terenure, Dublin 6</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <div class="gallery-item gallery-item--h300 reveal" data-category="garden-design" data-index="10">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal8/800/600" alt="Landscaping" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">LANDSCAPING</span>
-              <span class="gallery-item__location">Templeogue, Dublin 12</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <div class="gallery-item gallery-item--h280 reveal" data-category="garden-design" data-index="11">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal9/800/600" alt="Garden design" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">GARDEN DESIGN</span>
-              <span class="gallery-item__location">Clonskeagh, Dublin 14</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <!-- 2 × Planting -->
-          <div class="gallery-item gallery-item--h260 reveal" data-category="planting" data-index="12">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal10/800/600" alt="Planting and flower beds" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">PLANTING & FLOWER BEDS</span>
-              <span class="gallery-item__location">Rathfarnham, Dublin 14</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <div class="gallery-item gallery-item--h340 reveal" data-category="planting" data-index="13">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal11/800/600" alt="Planting" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">PLANTING</span>
-              <span class="gallery-item__location">Stillorgan, Dublin 18</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <!-- 2 × Lawns -->
-          <div class="gallery-item gallery-item--h220 reveal" data-category="lawns" data-index="14">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal12/800/600" alt="New lawn and turf" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">NEW LAWN & TURF</span>
-              <span class="gallery-item__location">Foxrock, Dublin 18</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <div class="gallery-item gallery-item--h300 reveal" data-category="lawns" data-index="15">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal12/800/600" alt="Artificial grass" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">ARTIFICIAL GRASS</span>
-              <span class="gallery-item__location">Dundrum, Dublin 14</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <!-- 1 × Fencing -->
-          <div class="gallery-item gallery-item--h280 reveal" data-category="fencing" data-index="16">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal13/800/600" alt="Garden fencing" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">GARDEN FENCING</span>
-              <span class="gallery-item__location">Cabinteely, Dublin 18</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
-          <!-- 1 × Natural Stone -->
-          <div class="gallery-item gallery-item--h260 reveal" data-category="natural-stone" data-index="17">
-            <div class="gallery-item__img"><img src="https://picsum.photos/seed/l2l-gal8/800/600" alt="Natural stone" loading="lazy"></div>
-            <div class="gallery-item__overlay">
-              <span class="gallery-item__type">NATURAL STONE</span>
-              <span class="gallery-item__location">Dalkey, Dublin 4</span>
-              <span class="gallery-item__arrow">→</span>
-            </div>
-          </div>
+          <div class="gallery__item" data-category="driveways">
+  <img src="/images/services/paving-driveways/driveways/driveways_10.webp" alt="Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="driveways">
+  <img src="/images/services/paving-driveways/driveways/driveways_13.webp" alt="Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="driveways">
+  <img src="/images/services/paving-driveways/driveways/driveways_14.webp" alt="Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="driveways">
+  <img src="/images/services/paving-driveways/driveways/driveways_15.webp" alt="Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="driveways">
+  <img src="/images/services/paving-driveways/driveways/driveways_16.webp" alt="Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="driveways">
+  <img src="/images/services/paving-driveways/driveways/driveways_17.webp" alt="Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="driveways">
+  <img src="/images/services/paving-driveways/driveways/driveways_19.webp" alt="Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="driveways">
+  <img src="/images/services/paving-driveways/driveways/driveways_20.webp" alt="Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="driveways">
+  <img src="/images/services/paving-driveways/driveways/driveways_21.webp" alt="Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="driveways">
+  <img src="/images/services/paving-driveways/driveways/driveways_22.webp" alt="Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="driveways">
+  <img src="/images/services/paving-driveways/driveways/driveways_23.webp" alt="Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="driveways">
+  <img src="/images/services/paving-driveways/driveways/driveways_24.webp" alt="Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="driveways">
+  <img src="/images/services/paving-driveways/driveways/driveways_4.webp" alt="Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="driveways">
+  <img src="/images/services/paving-driveways/driveways/driveways_8.webp" alt="Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="driveways">
+  <img src="/images/services/paving-driveways/driveways/driveways_9.webp" alt="Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_1.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_10.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_11.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_14.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_15.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_16.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_17.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_21.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_22.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_23.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_24.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_25.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_26.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_27.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_3.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_30.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_31.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_32.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_33.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+          <div class="gallery__item" data-category="resin-bound">
+  <img src="/images/services/paving-driveways/resin-bound/resin-bound_8.webp" alt="Resin-Bound" loading="lazy">
+  <div class="gallery__overlay"><span>Resin-Bound</span></div>
+</div>
+
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_14.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_17.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_18.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_19.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_20.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_21.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_22.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_24.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_25.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_26.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_27.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_28.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_29.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_30.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_32.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_34.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_35.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_36.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_37.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_38.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="porcelain-paving">
+  <img src="/images/services/paving-driveways/porcelain-paving/porcelain-paving_4.webp" alt="Porcelain Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Porcelain Paving</span></div>
+</div>
+
+          <div class="gallery__item" data-category="granite-paving">
+  <img src="/images/services/paving-driveways/granite-paving/granite-paving_1.webp" alt="Granite Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Granite Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="granite-paving">
+  <img src="/images/services/paving-driveways/granite-paving/granite-paving_2.webp" alt="Granite Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Granite Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="granite-paving">
+  <img src="/images/services/paving-driveways/granite-paving/granite-paving_4.webp" alt="Granite Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Granite Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="granite-paving">
+  <img src="/images/services/paving-driveways/granite-paving/granite-paving_6.webp" alt="Granite Paving" loading="lazy">
+  <div class="gallery__overlay"><span>Granite Paving</span></div>
+</div>
+          <div class="gallery__item" data-category="gravel-driveways">
+  <img src="/images/services/paving-driveways/gravel-driveways/gravel-driveways_2.webp" alt="Gravel Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Gravel Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="gravel-driveways">
+  <img src="/images/services/paving-driveways/gravel-driveways/gravel-driveways_5.webp" alt="Gravel Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Gravel Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="gravel-driveways">
+  <img src="/images/services/paving-driveways/gravel-driveways/gravel-driveways_7.webp" alt="Gravel Driveways" loading="lazy">
+  <div class="gallery__overlay"><span>Gravel Driveways</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_11.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_13.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_17.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_18.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_19.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_20.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_21.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_23.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_24.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_25.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_26.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_27.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_28.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_3.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_31.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_32.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_33.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_34.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_35.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_36.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_37.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_38.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_39.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_40.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_42.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="planting">
+  <img src="/images/services/garden-design/planting-services/planting-services_43.webp" alt="Planting" loading="lazy">
+  <div class="gallery__overlay"><span>Planting</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_1.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_11.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_12.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_15.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+ 
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_2.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_22.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_23.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_24.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_25.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_27.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_28.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_29.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_3.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_31.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_32.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_33.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_34.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_35.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+ 
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_37.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_38.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_4.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+  
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_6.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_7.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+          <div class="gallery__item" data-category="flowerbeds">
+  <img src="/images/services/garden-design/flowerbeds/flowerbeds_8.webp" alt="Flowerbeds" loading="lazy">
+  <div class="gallery__overlay"><span>Flowerbeds</span></div>
+</div>
+
+          <div class="gallery__item" data-category="sheds">
+  <img src="/images/services/garden-design/sheds/sheds_3.webp" alt="Sheds" loading="lazy">
+  <div class="gallery__overlay"><span>Sheds</span></div>
+</div>
+          <div class="gallery__item" data-category="sheds">
+  <img src="/images/services/garden-design/sheds/sheds_5.webp" alt="Sheds" loading="lazy">
+  <div class="gallery__overlay"><span>Sheds</span></div>
+</div>
+          <div class="gallery__item" data-category="sheds">
+  <img src="/images/services/garden-design/sheds/sheds_6.webp" alt="Sheds" loading="lazy">
+  <div class="gallery__overlay"><span>Sheds</span></div>
+</div>
+          <div class="gallery__item" data-category="sheds">
+  <img src="/images/services/garden-design/sheds/sheds_7.webp" alt="Sheds" loading="lazy">
+  <div class="gallery__overlay"><span>Sheds</span></div>
+</div>
+          <div class="gallery__item" data-category="gardening">
+  <img src="/images/services/garden-design/gardening-services/gardening-services_10.webp" alt="Gardening" loading="lazy">
+  <div class="gallery__overlay"><span>Gardening</span></div>
+</div>
+          <div class="gallery__item" data-category="gardening">
+  <img src="/images/services/garden-design/gardening-services/gardening-services_12.webp" alt="Gardening" loading="lazy">
+  <div class="gallery__overlay"><span>Gardening</span></div>
+</div>
+          <div class="gallery__item" data-category="gardening">
+  <img src="/images/services/garden-design/gardening-services/gardening-services_13.webp" alt="Gardening" loading="lazy">
+  <div class="gallery__overlay"><span>Gardening</span></div>
+</div>
+          <div class="gallery__item" data-category="gardening">
+  <img src="/images/services/garden-design/gardening-services/gardening-services_14.webp" alt="Gardening" loading="lazy">
+  <div class="gallery__overlay"><span>Gardening</span></div>
+</div>
+          <div class="gallery__item" data-category="gardening">
+  <img src="/images/services/garden-design/gardening-services/gardening-services_15.webp" alt="Gardening" loading="lazy">
+  <div class="gallery__overlay"><span>Gardening</span></div>
+</div>
+          <div class="gallery__item" data-category="gardening">
+  <img src="/images/services/garden-design/gardening-services/gardening-services_17.webp" alt="Gardening" loading="lazy">
+  <div class="gallery__overlay"><span>Gardening</span></div>
+</div>
+          <div class="gallery__item" data-category="gardening">
+  <img src="/images/services/garden-design/gardening-services/gardening-services_18.webp" alt="Gardening" loading="lazy">
+  <div class="gallery__overlay"><span>Gardening</span></div>
+</div>
+          <div class="gallery__item" data-category="gardening">
+  <img src="/images/services/garden-design/gardening-services/gardening-services_2.webp" alt="Gardening" loading="lazy">
+  <div class="gallery__overlay"><span>Gardening</span></div>
+</div>
+          <div class="gallery__item" data-category="gardening">
+  <img src="/images/services/garden-design/gardening-services/gardening-services_5.webp" alt="Gardening" loading="lazy">
+  <div class="gallery__overlay"><span>Gardening</span></div>
+</div>
+          <div class="gallery__item" data-category="gardening">
+  <img src="/images/services/garden-design/gardening-services/gardening-services_6.webp" alt="Gardening" loading="lazy">
+  <div class="gallery__overlay"><span>Gardening</span></div>
+</div>
+          <div class="gallery__item" data-category="gardening">
+  <img src="/images/services/garden-design/gardening-services/gardening-services_7.webp" alt="Gardening" loading="lazy">
+  <div class="gallery__overlay"><span>Gardening</span></div>
+</div>
+          <div class="gallery__item" data-category="gardening">
+  <img src="/images/services/garden-design/gardening-services/gardening-services_9.webp" alt="Gardening" loading="lazy">
+  <div class="gallery__overlay"><span>Gardening</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_1.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_10.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_11.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_12.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_13.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_15.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_16.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_17.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_18.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_20.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_21.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_22.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_23.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_24.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_7.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_8.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+          <div class="gallery__item" data-category="lawn-turf">
+  <img src="/images/services/lawn-fencing/new-lawn-turf/new-lawn-turf_9.webp" alt="Lawn &amp; Turf" loading="lazy">
+  <div class="gallery__overlay"><span>Lawn &amp; Turf</span></div>
+</div>
+ 
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_16.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_2.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_21.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_22.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_28.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_30.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_32.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_33.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_34.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_35.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_37.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_38.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_39.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_4.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_40.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_43.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="artificial-grass">
+  <img src="/images/services/lawn-fencing/artificial-grass/artificial-grass_5.webp" alt="Artificial Grass" loading="lazy">
+  <div class="gallery__overlay"><span>Artificial Grass</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_15.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_16.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_2.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_21.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_26.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_27.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_28.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_29.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_30.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_32.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_33.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_35.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_36.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_37.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_39.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_40.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_41.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_45.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_47.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
+          <div class="gallery__item" data-category="fencing">
+  <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_8.webp" alt="Fencing" loading="lazy">
+  <div class="gallery__overlay"><span>Fencing</span></div>
+</div>
         </div>
       </div>
     </section>
@@ -313,7 +930,7 @@
   <footer class="footer">
     <div class="container footer__top">
       <div class="footer__brand">
-        <a href="../home/index.html" class="footer__logo"><img src="../images/logo.png" alt="Leaf 2 Leaf Landscapes" class="footer__logo-img"></a>
+        <a href="../home/index.html" class="footer__logo"><img src="/images/logo.png" alt="Leaf 2 Leaf Landscapes" class="footer__logo-img"></a>
         <p class="footer__tagline">Dublin's Outdoor Spaces, Reimagined.</p>
         <div class="footer__social">
           <a href="https://www.facebook.com/leaf2leaflandscapes" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
@@ -326,37 +943,34 @@
       <div class="footer__col">
         <h3 class="footer__col-title">Paving & Driveways</h3>
         <div class="footer__col-links">
-          <a href="../services/paving-driveways/driveways.html">Driveways</a>
-          <a href="../services/paving-driveways/resin-bound.html">Resin-Bound Surfaces</a>
-          <a href="../services/paving-driveways/block-paving.html">Block Paving</a>
-          <a href="../services/paving-driveways/flagging.html">Flagging</a>
-          <a href="../services/paving-driveways/patios.html">Patios</a>
-          <a href="../services/paving-driveways/kerbs-walling.html">Kerbs & Walling</a>
-          <a href="../services/paving-driveways/gravel-driveways.html">Gravel Driveways</a>
+          <a href="/services/paving-driveways/driveways.html">Driveways</a>
+          <a href="/services/paving-driveways/resin-bound.html">Resin-Bound Surfaces</a>
+          <a href="/services/paving-driveways/porcelain-paving.html">Porcelain Paving</a>
+          <a href="/services/paving-driveways/granite-paving.html">Granite Paving</a>
+          <a href="/services/paving-driveways/gravel-driveways.html">Gravel Driveways</a>
         </div>
       </div>
       <div class="footer__col">
         <h3 class="footer__col-title">Garden & Lawn</h3>
         <div class="footer__col-links">
-          <a href="../services/garden-design/landscaping-design.html">Landscaping & Design</a>
-          <a href="../services/garden-design/flower-bed-design.html">Flower Bed Design</a>
-          <a href="../services/garden-design/natural-stone.html">Natural Stone</a>
-          <a href="../services/garden-design/planting-services.html">Planting Services</a>
-          <a href="../services/garden-design/garden-features.html">Garden Features</a>
-          <a href="../services/garden-design/porcelain-paving.html">Porcelain Paving</a>
-          <a href="../services/lawn-fencing/new-lawn-turf.html">New Lawn & Turf</a>
-          <a href="../services/lawn-fencing/artificial-grass.html">Artificial Grass</a>
-          <a href="../services/lawn-fencing/garden-fencing.html">Garden Fencing</a>
+          <a href="/services/garden-design/landscaping-design.html">Landscaping & Design</a>
+          <a href="/services/garden-design/planting-services.html">Planting Services</a>
+          <a href="/services/garden-design/flowerbeds.html">Flowerbeds</a>
+          <a href="/services/garden-design/sheds.html">Sheds</a>
+          <a href="/services/garden-design/gardening-services.html">Gardening Services</a>
+          <a href="/services/lawn-fencing/new-lawn-turf.html">New Lawn & Turf</a>
+          <a href="/services/lawn-fencing/artificial-grass.html">Artificial Grass</a>
+          <a href="/services/lawn-fencing/garden-fencing.html">Garden Fencing</a>
         </div>
       </div>
       <div class="footer__col">
         <h3 class="footer__col-title">Company</h3>
         <div class="footer__col-links">
-          <a href="../about/index.html">About Us</a>
-          <a href="index.html">Our Work</a>
-          <a href="../reviews/index.html">Reviews</a>
-          <a href="../contact.html">Contact Us</a>
-          <a href="../contact.html">Get a Free Quote</a>
+          <a href="/about/index.html">About Us</a>
+          <a href="/gallery/index.html">Our Work</a>
+          <a href="/reviews/index.html">Reviews</a>
+          <a href="/contact.html">Contact Us</a>
+          <a href="/contact.html">Get a Free Quote</a>
         </div>
         <div class="footer__contact">
           <p>📞 (01) 901 2633</p>
@@ -367,13 +981,36 @@
       </div>
     </div>
     <div class="footer__bottom container">
-      <p>© 2026 Leaf 2 Leaf Landscapes · All rights reserved · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+      <p>© 2026 Leaf 2 Leaf Landscapes · All rights reserved · <a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms-of-service.html">Terms of Service</a> · <a href="#" id="cookie-settings-link">Cookie Settings</a></p>
       <span class="footer__bottom-serving">Serving all of County Dublin</span>
     </div>
   </footer>
 
-  <script src="../js/main.js"></script>
-  <script src="../js/gallery.js"></script>
-  <script src="../js/chat-widget.js"></script>
+  <script src="/js/countup.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/gallery.js"></script>
+  <script src="/js/chat-widget.js"></script>
+  <script src="/js/cookie-banner.js"></script>
+  <script>
+    const filters = document.querySelectorAll('.gallery__filter');
+    const items = document.querySelectorAll('.gallery__item');
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(b => b.classList.remove('gallery__filter--active'));
+        btn.classList.add('gallery__filter--active');
+
+        const filter = btn.dataset.filter;
+
+        items.forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

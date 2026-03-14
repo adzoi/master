@@ -1,3 +1,6 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 /* ============================================
    Leaf 2 Leaf Landscapes — Contact Page
    Uses design tokens from main.css only.
@@ -415,6 +418,45 @@
   display: none;
 }
 
+/* Slots box (time_unavailable) */
+.slots-box {
+  margin-top: 1rem;
+  padding: 1.25rem;
+  background: rgba(184, 154, 90, 0.12);
+  border: 1px solid var(--color-gold);
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  color: var(--color-green);
+}
+
+.slots-box p {
+  margin: 0 0 0.5rem;
+}
+
+.slots-box p:last-child {
+  margin-bottom: 0;
+}
+
+.slots-box .slots-list {
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+/* Form error message */
+.contact-page__form-error {
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: 0.9375rem;
+  color: var(--color-charcoal);
+  background: rgba(200, 80, 80, 0.1);
+  border-left: 4px solid #c05050;
+  border-radius: 4px;
+}
+
+.contact-page__form-error[hidden] {
+  display: none !important;
+}
+
 .contact-page__right.form-submitted .contact-page__form,
 .contact-page__right.form-submitted .contact-page__privacy {
   display: none;
@@ -482,7 +524,7 @@
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
   text-align: center;
-  color: var(--color-charcoal);
+  color: #297549;
   margin-bottom: 2rem;
 }
 
@@ -505,7 +547,7 @@
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--color-charcoal);
+  color: #297549 !important;
   text-align: left;
   background: none;
   border: none;
@@ -595,5 +637,26 @@
   .contact-page__input,
   .contact-page__tel-primary {
     min-height: 44px;
+  }
+
+  .contact-page__form .contact-page__field,
+  .contact-page__input,
+  .contact-page__textarea,
+  .contact-page__submit-wrap {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .faq-list {
+    padding-left: clamp(16px, 4vw, 40px);
+    padding-right: clamp(16px, 4vw, 40px);
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding-left: clamp(16px, 4vw, 40px);
+    padding-right: clamp(16px, 4vw, 40px);
   }
 }

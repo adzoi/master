@@ -8,9 +8,9 @@
   <link rel="canonical" href="https://leaf2leaflandscapes.ie/about">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/about.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/about.css">
 </head>
 <body class="page-about">
 
@@ -18,7 +18,7 @@
     <div class="nav__inner">
       <a href="../home/index.html" class="nav__logo">
         <img
-          src="../images/logo.png"
+          src="/images/logo.png"
           alt="Leaf 2 Leaf Landscapes"
           class="nav__logo-img"
         >
@@ -29,10 +29,29 @@
           <a href="../services/index.html">Services</a>
           <div class="nav__dropdown">
             <div class="nav__dropdown-inner">
-              <div class="nav__dropdown-col"><h3>Paving & Driveways</h3><a href="../services/paving-driveways/driveways.html">Driveways</a><a href="../services/paving-driveways/resin-bound.html">Resin-Bound Surfaces</a><a href="../services/paving-driveways/block-paving.html">Block Paving</a><a href="../services/paving-driveways/flagging.html">Flagging</a><a href="../services/paving-driveways/patios.html">Patios</a><a href="../services/paving-driveways/kerbs-walling.html">Kerbs & Walling</a><a href="../services/paving-driveways/gravel-driveways.html">Gravel Driveways</a></div>
-              <div class="nav__dropdown-col"><h3>Garden Design & Planting</h3><a href="../services/garden-design/landscaping-design.html">Landscaping & Design</a><a href="../services/garden-design/flower-bed-design.html">Flower Bed Design</a><a href="../services/garden-design/natural-stone.html">Natural Stone</a><a href="../services/garden-design/planting-services.html">Planting Services</a><a href="../services/garden-design/garden-features.html">Garden Features</a><a href="../services/garden-design/porcelain-paving.html">Porcelain Paving</a></div>
-              <div class="nav__dropdown-col"><h3>Lawn & Fencing</h3><a href="../services/lawn-fencing/new-lawn-turf.html">New Lawn & Turf</a><a href="../services/lawn-fencing/artificial-grass.html">Artificial Grass</a><a href="../services/lawn-fencing/garden-fencing.html">Garden Fencing</a></div>
-              <a href="../services/mobile-showroom/index.html" class="nav__dropdown-featured">Mobile Showroom — Ireland's First · Learn More →</a>
+              <div class="nav__dropdown-col">
+                <h3>Paving & Driveways</h3>
+                <a href="/services/paving-driveways/driveways.html">Driveways</a>
+                <a href="/services/paving-driveways/resin-bound.html">Resin-Bound Surfaces</a>
+                <a href="/services/paving-driveways/porcelain-paving.html">Porcelain Paving</a>
+                <a href="/services/paving-driveways/granite-paving.html">Granite Paving</a>
+                <a href="/services/paving-driveways/gravel-driveways.html">Gravel Driveways</a>
+              </div>
+              <div class="nav__dropdown-col">
+                <h3>Garden Design & Planting</h3>
+                <a href="/services/garden-design/landscaping-design.html">Landscaping & Design</a>
+                <a href="/services/garden-design/planting-services.html">Planting Services</a>
+                <a href="/services/garden-design/flowerbeds.html">Flowerbeds</a>
+                <a href="/services/garden-design/sheds.html">Sheds</a>
+                <a href="/services/garden-design/gardening-services.html">Gardening Services</a>
+              </div>
+              <div class="nav__dropdown-col">
+                <h3>Lawn & Fencing</h3>
+                <a href="/services/lawn-fencing/new-lawn-turf.html">New Lawn & Turf</a>
+                <a href="/services/lawn-fencing/artificial-grass.html">Artificial Grass</a>
+                <a href="/services/lawn-fencing/garden-fencing.html">Garden Fencing</a>
+              </div>
+              <a href="/services/mobile-showroom/index.html" class="nav__dropdown-featured">Mobile Showroom — Ireland's First · Learn More →</a>
             </div>
           </div>
         </div>
@@ -45,6 +64,9 @@
       <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
     <div class="nav__overlay" id="nav-overlay">
+      <div class="nav__mobile-logo">
+        <img src="/images/logo.png" alt="Leaf 2 Leaf Landscapes" onerror="this.style.display='none'">
+      </div>
       <nav class="nav__overlay-links" id="nav-overlay-links">
         <a href="../home/index.html">Home</a>
         <a href="../services/index.html">Services</a>
@@ -74,7 +96,7 @@
         <div class="about-hero__visual">
           <div class="about-founder-logo">
             <img
-              src="../images/logo.png"
+              src="/images/logo.png"
               alt="Leaf 2 Leaf Landscapes"
               class="about-founder-logo__img"
             >
@@ -93,8 +115,7 @@
           <p>Today, Leaf 2 Leaf is a full team of experienced tradespeople, designers, and project managers — but the values haven't changed. We still treat every client's outdoor space as if it were our own.</p>
         </div>
         <div class="origin-section__img-wrap">
-          <!-- Replace with candid photo of Mike on a job site -->
-          <div class="origin-section__placeholder"></div>
+          <img src="/images/about.webp" alt="Leaf 2 Leaf Landscapes team at work" class="origin-section__img">
         </div>
       </div>
     </section>
@@ -163,7 +184,6 @@
         <h2 class="team-section__title">The People Behind The Work</h2>
         <p class="team-section__sub">Every member of our team is experienced, fully insured, and takes genuine pride in their craft.</p>
         <div class="team-grid">
-          <!-- Replace placeholder circles with real team photos -->
           <article class="team-card reveal">
             <div class="team-card__img team-card__img--1"></div>
             <h3 class="team-card__name">Mike</h3>
@@ -172,15 +192,27 @@
           </article>
           <article class="team-card reveal">
             <div class="team-card__img team-card__img--2"></div>
-            <h3 class="team-card__name">The Paving Team</h3>
-            <p class="team-card__role">Master Pavers</p>
-            <p class="team-card__bio">Our paving specialists have laid thousands of driveways, patios, and paths across Dublin. Precision and speed without compromise.</p>
+            <h3 class="team-card__name">PR & Marketing</h3>
+            <p class="team-card__role">Public Relations & Marketing</p>
+            <p class="team-card__bio">Keeping Leaf 2 Leaf front of mind across Dublin — from social media to community outreach and customer communications.</p>
           </article>
           <article class="team-card reveal">
             <div class="team-card__img team-card__img--3"></div>
-            <h3 class="team-card__name">The Design Team</h3>
-            <p class="team-card__role">Garden Designers</p>
-            <p class="team-card__bio">From planting plans to full garden transformations, our designers bring creativity and horticultural knowledge to every project.</p>
+            <h3 class="team-card__name">Team Manager</h3>
+            <p class="team-card__role">Operations & Team Management</p>
+            <p class="team-card__bio">Coordinating crews, schedules and logistics to make sure every project runs smoothly from start to finish.</p>
+          </article>
+          <article class="team-card reveal">
+            <div class="team-card__img team-card__img--4"></div>
+            <h3 class="team-card__name">Site Manager</h3>
+            <p class="team-card__role">Site Supervision</p>
+            <p class="team-card__bio">On the ground every day ensuring quality, safety and client satisfaction across all active sites.</p>
+          </article>
+          <article class="team-card reveal">
+            <div class="team-card__img team-card__img--5"></div>
+            <h3 class="team-card__name">Paving Team</h3>
+            <p class="team-card__role">Master Pavers</p>
+            <p class="team-card__bio">Our paving specialists have laid thousands of driveways, patios and paths across Dublin. Precision and speed without compromise.</p>
           </article>
         </div>
       </div>
@@ -229,7 +261,7 @@
         <h2 class="accred-section__title">Fully Insured & Professionally Accredited</h2>
         <div class="accred-list">
           <span class="accred-item">Public Liability Insured</span>
-          <span class="accred-item">35+ Years Trading</span>
+          <span class="accred-item"><span data-target="35">35+</span> Years Trading</span>
           <span class="accred-item">County Dublin Based</span>
           <span class="accred-item">Free Written Estimates</span>
           <span class="accred-item">5-Star Google Rated</span>
@@ -242,7 +274,7 @@
       <div class="about-cta__noise" aria-hidden="true"></div>
       <div class="about-cta__content">
         <h2 class="about-cta__title">Contact Us Now</h2>
-        <p class="about-cta__sub">Join over 2,000 Dublin homeowners who've transformed their outdoor spaces with Leaf 2 Leaf.</p>
+        <p class="about-cta__sub">Join over <span data-target="2000">2,000</span> Dublin homeowners who've transformed their outdoor spaces with Leaf 2 Leaf.</p>
         <div class="about-cta__buttons">
           <a href="../contact.html" class="btn btn--cream">Get a Free Quote</a>
           <a href="../gallery/index.html" class="btn btn--outline">See Our Work</a>
@@ -255,7 +287,7 @@
   <footer class="footer">
     <div class="container footer__top">
       <div class="footer__brand">
-        <a href="../home/index.html" class="footer__logo"><img src="../images/logo.png" alt="Leaf 2 Leaf Landscapes" class="footer__logo-img"></a>
+        <a href="/home/index.html" class="footer__logo"><img src="/images/logo.png" alt="Leaf 2 Leaf Landscapes" class="footer__logo-img"></a>
         <p class="footer__tagline">Dublin's Outdoor Spaces, Reimagined.</p>
         <div class="footer__social">
           <a href="https://www.facebook.com/leaf2leaflandscapes" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
@@ -268,37 +300,34 @@
       <div class="footer__col">
         <h3 class="footer__col-title">Paving & Driveways</h3>
         <div class="footer__col-links">
-          <a href="../services/paving-driveways/driveways.html">Driveways</a>
-          <a href="../services/paving-driveways/resin-bound.html">Resin-Bound Surfaces</a>
-          <a href="../services/paving-driveways/block-paving.html">Block Paving</a>
-          <a href="../services/paving-driveways/flagging.html">Flagging</a>
-          <a href="../services/paving-driveways/patios.html">Patios</a>
-          <a href="../services/paving-driveways/kerbs-walling.html">Kerbs & Walling</a>
-          <a href="../services/paving-driveways/gravel-driveways.html">Gravel Driveways</a>
+          <a href="/services/paving-driveways/driveways.html">Driveways</a>
+          <a href="/services/paving-driveways/resin-bound.html">Resin-Bound Surfaces</a>
+          <a href="/services/paving-driveways/porcelain-paving.html">Porcelain Paving</a>
+          <a href="/services/paving-driveways/granite-paving.html">Granite Paving</a>
+          <a href="/services/paving-driveways/gravel-driveways.html">Gravel Driveways</a>
         </div>
       </div>
       <div class="footer__col">
         <h3 class="footer__col-title">Garden & Lawn</h3>
         <div class="footer__col-links">
-          <a href="../services/garden-design/landscaping-design.html">Landscaping & Design</a>
-          <a href="../services/garden-design/flower-bed-design.html">Flower Bed Design</a>
-          <a href="../services/garden-design/natural-stone.html">Natural Stone</a>
-          <a href="../services/garden-design/planting-services.html">Planting Services</a>
-          <a href="../services/garden-design/garden-features.html">Garden Features</a>
-          <a href="../services/garden-design/porcelain-paving.html">Porcelain Paving</a>
-          <a href="../services/lawn-fencing/new-lawn-turf.html">New Lawn & Turf</a>
-          <a href="../services/lawn-fencing/artificial-grass.html">Artificial Grass</a>
-          <a href="../services/lawn-fencing/garden-fencing.html">Garden Fencing</a>
+          <a href="/services/garden-design/landscaping-design.html">Landscaping & Design</a>
+          <a href="/services/garden-design/planting-services.html">Planting Services</a>
+          <a href="/services/garden-design/flowerbeds.html">Flowerbeds</a>
+          <a href="/services/garden-design/sheds.html">Sheds</a>
+          <a href="/services/garden-design/gardening-services.html">Gardening Services</a>
+          <a href="/services/lawn-fencing/new-lawn-turf.html">New Lawn & Turf</a>
+          <a href="/services/lawn-fencing/artificial-grass.html">Artificial Grass</a>
+          <a href="/services/lawn-fencing/garden-fencing.html">Garden Fencing</a>
         </div>
       </div>
       <div class="footer__col">
         <h3 class="footer__col-title">Company</h3>
         <div class="footer__col-links">
-          <a href="index.html">About Us</a>
-          <a href="../gallery/index.html">Our Work</a>
-          <a href="../reviews/index.html">Reviews</a>
-          <a href="../contact.html">Contact Us</a>
-          <a href="../contact.html">Get a Free Quote</a>
+          <a href="/about/index.html">About Us</a>
+          <a href="/gallery/index.html">Our Work</a>
+          <a href="/reviews/index.html">Reviews</a>
+          <a href="/contact.html">Contact Us</a>
+          <a href="/contact.html">Get a Free Quote</a>
         </div>
         <div class="footer__contact">
           <p>📞 (01) 901 2633</p>
@@ -309,13 +338,14 @@
       </div>
     </div>
     <div class="footer__bottom container">
-      <p>© 2026 Leaf 2 Leaf Landscapes · All rights reserved · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+      <p>© 2026 Leaf 2 Leaf Landscapes · All rights reserved · <a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms-of-service.html">Terms of Service</a> · <a href="#" id="cookie-settings-link">Cookie Settings</a></p>
       <span class="footer__bottom-serving">Serving all of County Dublin</span>
     </div>
   </footer>
-
-  <script src="../js/main.js"></script>
-  <script src="../js/about.js"></script>
-  <script src="../js/chat-widget.js"></script>
+  <script src="/js/countup.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/about.js"></script>
+  <script src="/js/chat-widget.js"></script>
+  <script src="/js/cookie-banner.js"></script>
 </body>
 </html>

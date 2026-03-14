@@ -10,15 +10,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/main.css">
-  <link rel="stylesheet" href="../../css/service-page.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/service-page.css">
 </head>
 <body class="page-service">
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="../../home/index.html" class="nav__logo">
         <img
-          src="../../images/logo.png"
+          src="/images/logo.png"
           alt="Leaf 2 Leaf Landscapes"
           class="nav__logo-img"
         >
@@ -29,10 +29,29 @@
           <a href="../../services/index.html" class="active">Services</a>
           <div class="nav__dropdown">
             <div class="nav__dropdown-inner">
-              <div class="nav__dropdown-col"><h3>Paving & Driveways</h3><a href="../paving-driveways/driveways.html">Driveways</a><a href="../paving-driveways/resin-bound.html">Resin-Bound Surfaces</a><a href="../paving-driveways/block-paving.html">Block Paving</a><a href="../paving-driveways/flagging.html">Flagging</a><a href="../paving-driveways/patios.html">Patios</a><a href="../paving-driveways/kerbs-walling.html">Kerbs & Walling</a><a href="../paving-driveways/gravel-driveways.html">Gravel Driveways</a></div>
-              <div class="nav__dropdown-col"><h3>Garden Design & Planting</h3><a href="../garden-design/landscaping-design.html">Landscaping & Design</a><a href="../garden-design/flower-bed-design.html">Flower Bed Design</a><a href="../garden-design/natural-stone.html">Natural Stone</a><a href="../garden-design/planting-services.html">Planting Services</a><a href="../garden-design/garden-features.html">Garden Features</a><a href="../garden-design/porcelain-paving.html">Porcelain Paving</a></div>
-              <div class="nav__dropdown-col"><h3>Lawn & Fencing</h3><a href="new-lawn-turf.html">New Lawn & Turf</a><a href="artificial-grass.html">Artificial Grass</a><a href="garden-fencing.html">Garden Fencing</a></div>
-              <a href="../mobile-showroom/index.html" class="nav__dropdown-featured">Mobile Showroom — Ireland's First · Learn More →</a>
+              <div class="nav__dropdown-col">
+                <h3>Paving & Driveways</h3>
+                <a href="/services/paving-driveways/driveways.html">Driveways</a>
+                <a href="/services/paving-driveways/resin-bound.html">Resin-Bound Surfaces</a>
+                <a href="/services/paving-driveways/porcelain-paving.html">Porcelain Paving</a>
+                <a href="/services/paving-driveways/granite-paving.html">Granite Paving</a>
+                <a href="/services/paving-driveways/gravel-driveways.html">Gravel Driveways</a>
+              </div>
+              <div class="nav__dropdown-col">
+                <h3>Garden Design & Planting</h3>
+                <a href="/services/garden-design/landscaping-design.html">Landscaping & Design</a>
+                <a href="/services/garden-design/planting-services.html">Planting Services</a>
+                <a href="/services/garden-design/flowerbeds.html">Flowerbeds</a>
+                <a href="/services/garden-design/sheds.html">Sheds</a>
+                <a href="/services/garden-design/gardening-services.html">Gardening Services</a>
+              </div>
+              <div class="nav__dropdown-col">
+                <h3>Lawn & Fencing</h3>
+                <a href="/services/lawn-fencing/new-lawn-turf.html">New Lawn & Turf</a>
+                <a href="/services/lawn-fencing/artificial-grass.html">Artificial Grass</a>
+                <a href="/services/lawn-fencing/garden-fencing.html">Garden Fencing</a>
+              </div>
+              <a href="/services/mobile-showroom/index.html" class="nav__dropdown-featured">Mobile Showroom — Ireland's First · Learn More →</a>
             </div>
           </div>
         </div>
@@ -44,7 +63,12 @@
       <a href="../../contact.html" class="nav__cta">Get a Free Quote</a>
       <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
-    <div class="nav__overlay" id="nav-overlay"><nav class="nav__overlay-links" id="nav-overlay-links"></nav></div>
+    <div class="nav__overlay" id="nav-overlay">
+      <div class="nav__mobile-logo">
+        <img src="/images/logo.png" alt="Leaf 2 Leaf Landscapes" onerror="this.style.display='none'">
+      </div>
+      <nav class="nav__overlay-links" id="nav-overlay-links"></nav>
+    </div>
   </header>
   <main>
     <section class="service-hero">
@@ -60,7 +84,9 @@
             <a href="#examples" class="btn btn--outline">See Examples</a>
           </div>
         </div>
-        <div class="service-hero__visual"><div class="service-hero__placeholder"><img src="https://images.unsplash.com/photo-1590725121839-892b458a74fe?w=800&auto=format&fit=crop" alt=""></div></div>
+        <div class="service-hero__visual">
+          <img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_15.webp" alt="Garden Fencing Dublin" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+        </div>
       </div>
     </section>
     <section class="service-overview">
@@ -105,9 +131,9 @@
     <section class="service-examples" id="examples">
       <h2 class="service-examples__title">Garden Fencing Projects We're Proud Of</h2>
       <div class="service-examples__grid">
-        <div class="service-examples__item"><div class="service-examples__placeholder" style="height:280px"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop" alt=""></div><div class="service-examples__overlay">Slatted fence — Dublin</div></div>
-        <div class="service-examples__item"><div class="service-examples__placeholder" style="height:320px"><img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800&auto=format&fit=crop" alt=""></div><div class="service-examples__overlay">Panel & gate</div></div>
-        <div class="service-examples__item"><div class="service-examples__placeholder" style="height:280px"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&auto=format&fit=crop" alt=""></div><div class="service-examples__overlay">Full boundary — Sandyford</div></div>
+        <div class="service-examples__item"><div class="service-examples__placeholder" style="height:280px"><img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_16.webp" alt="Garden fencing project" style="width:100%;height:100%;object-fit:cover;border-radius:26px;"></div></div>
+        <div class="service-examples__item"><div class="service-examples__placeholder" style="height:320px"><img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_2.webp" alt="Garden fencing project" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div></div>
+        <div class="service-examples__item"><div class="service-examples__placeholder" style="height:280px"><img src="/images/services/lawn-fencing/garden-fencing/garden-fencing_21.webp" alt="Garden fencing project" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div></div>
       </div>
       <div class="service-examples__more"><a href="../../gallery/index.html" class="btn btn--outline">View the full project gallery →</a></div>
     </section>
@@ -151,7 +177,7 @@
       <div class="service-related__grid">
         <a href="new-lawn-turf.html" class="service-related__card reveal"><h3>New Lawn & Turf</h3><p>Professional turf & new lawn installation</p><span class="arrow">→</span></a>
         <a href="artificial-grass.html" class="service-related__card reveal"><h3>Artificial Grass</h3><p>Premium artificial grass installation</p><span class="arrow">→</span></a>
-        <a href="../garden-design/garden-features.html" class="service-related__card reveal"><h3>Garden Features</h3><p>Bespoke garden features & focal points</p><span class="arrow">→</span></a>
+        <a href="../garden-design/landscaping-design.html" class="service-related__card reveal"><h3>Landscaping & Design</h3><p>Full garden landscaping & design</p><span class="arrow">→</span></a>
       </div>
     </section>
     <section class="service-cta">
@@ -161,10 +187,10 @@
       <a href="../../contact.html" class="btn btn--cream">Or fill in our online form →</a>
     </section>
   </main>
-  <footer class="footer">
+    <footer class="footer">
     <div class="container footer__top">
       <div class="footer__brand">
-        <a href="../../home/index.html" class="footer__logo"><img src="../../images/logo.png" alt="Leaf 2 Leaf Landscapes" class="footer__logo-img"></a>
+        <a href="/home/index.html" class="footer__logo"><img src="/images/logo.png" alt="Leaf 2 Leaf Landscapes" class="footer__logo-img"></a>
         <p class="footer__tagline">Dublin's Outdoor Spaces, Reimagined.</p>
         <div class="footer__social">
           <a href="https://www.facebook.com/leaf2leaflandscapes" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
@@ -177,37 +203,34 @@
       <div class="footer__col">
         <h3 class="footer__col-title">Paving & Driveways</h3>
         <div class="footer__col-links">
-          <a href="../paving-driveways/driveways.html">Driveways</a>
-          <a href="../paving-driveways/resin-bound.html">Resin-Bound Surfaces</a>
-          <a href="../paving-driveways/block-paving.html">Block Paving</a>
-          <a href="../paving-driveways/flagging.html">Flagging</a>
-          <a href="../paving-driveways/patios.html">Patios</a>
-          <a href="../paving-driveways/kerbs-walling.html">Kerbs & Walling</a>
-          <a href="../paving-driveways/gravel-driveways.html">Gravel Driveways</a>
+          <a href="/services/paving-driveways/driveways.html">Driveways</a>
+          <a href="/services/paving-driveways/resin-bound.html">Resin-Bound Surfaces</a>
+          <a href="/services/paving-driveways/porcelain-paving.html">Porcelain Paving</a>
+          <a href="/services/paving-driveways/granite-paving.html">Granite Paving</a>
+          <a href="/services/paving-driveways/gravel-driveways.html">Gravel Driveways</a>
         </div>
       </div>
       <div class="footer__col">
         <h3 class="footer__col-title">Garden & Lawn</h3>
         <div class="footer__col-links">
-          <a href="../garden-design/landscaping-design.html">Landscaping & Design</a>
-          <a href="../garden-design/flower-bed-design.html">Flower Bed Design</a>
-          <a href="../garden-design/natural-stone.html">Natural Stone</a>
-          <a href="../garden-design/planting-services.html">Planting Services</a>
-          <a href="../garden-design/garden-features.html">Garden Features</a>
-          <a href="../garden-design/porcelain-paving.html">Porcelain Paving</a>
-          <a href="new-lawn-turf.html">New Lawn & Turf</a>
-          <a href="artificial-grass.html">Artificial Grass</a>
-          <a href="garden-fencing.html">Garden Fencing</a>
+          <a href="/services/garden-design/landscaping-design.html">Landscaping & Design</a>
+          <a href="/services/garden-design/planting-services.html">Planting Services</a>
+          <a href="/services/garden-design/flowerbeds.html">Flowerbeds</a>
+          <a href="/services/garden-design/sheds.html">Sheds</a>
+          <a href="/services/garden-design/gardening-services.html">Gardening Services</a>
+          <a href="/services/lawn-fencing/new-lawn-turf.html">New Lawn & Turf</a>
+          <a href="/services/lawn-fencing/artificial-grass.html">Artificial Grass</a>
+          <a href="/services/lawn-fencing/garden-fencing.html">Garden Fencing</a>
         </div>
       </div>
       <div class="footer__col">
         <h3 class="footer__col-title">Company</h3>
         <div class="footer__col-links">
-          <a href="../../about/index.html">About Us</a>
-          <a href="../../gallery/index.html">Our Work</a>
-          <a href="../../reviews/index.html">Reviews</a>
-          <a href="../../contact.html">Contact Us</a>
-          <a href="../../contact.html">Get a Free Quote</a>
+          <a href="/about/index.html">About Us</a>
+          <a href="/gallery/index.html">Our Work</a>
+          <a href="/reviews/index.html">Reviews</a>
+          <a href="/contact.html">Contact Us</a>
+          <a href="/contact.html">Get a Free Quote</a>
         </div>
         <div class="footer__contact">
           <p>📞 (01) 901 2633</p>
@@ -218,12 +241,14 @@
       </div>
     </div>
     <div class="footer__bottom container">
-      <p>© 2026 Leaf 2 Leaf Landscapes · All rights reserved · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+      <p>© 2026 Leaf 2 Leaf Landscapes · All rights reserved · <a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms-of-service.html">Terms of Service</a> · <a href="#" id="cookie-settings-link">Cookie Settings</a></p>
       <span class="footer__bottom-serving">Serving all of County Dublin</span>
     </div>
   </footer>
-  <script src="../../js/main.js"></script>
-  <script src="../../js/service-page.js"></script>
-  <script src="../../js/chat-widget.js"></script>
+  <script src="/js/countup.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/service-page.js"></script>
+  <script src="/js/chat-widget.js"></script>
+  <script src="/js/cookie-banner.js"></script>
 </body>
 </html>
