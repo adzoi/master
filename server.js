@@ -22,6 +22,10 @@ app.use(express.json());
 app.use(express.static(__dirname));
 console.log('4. middleware set');
 
+app.get('/', function (req, res) {
+  res.redirect('/home/index.html');
+});
+
 app.post('/api/chat', function (req, res) {
   if (!API_KEY) {
     return res.status(500).json({ error: { message: 'API key not set (set MISTRAL_API_KEY in .env, or L2L_CHAT_API_KEY for legacy setups)' } });
